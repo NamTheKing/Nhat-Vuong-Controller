@@ -14,6 +14,17 @@ Documentation set for the **Nhat Vuong Controller** project: a campus-wide smart
 | 05 | [05-development-workflow.md](05-development-workflow.md) | Git branching, commits, pull requests, CI gates | Engineering practice |
 | 06 | [06-testing-strategy.md](06-testing-strategy.md) | Test levels, NFR verification, device simulation | Quality practice |
 
+## Specification and architecture
+
+- [Canonical specification](specs/spec-nhat-vuong-controller/SPEC.md), [quality constraints](specs/spec-nhat-vuong-controller/quality-constraints.md), and [traceability](specs/spec-nhat-vuong-controller/traceability.md) define the system contract.
+- [Architecture spine](architecture/architecture-nhat-vuong-controller-2026-09-11/ARCHITECTURE-SPINE.md) is a draft; its [review](architecture/architecture-nhat-vuong-controller-2026-09-11/reviews/review-rubric-walker.md) records unresolved findings.
+- [BMAD build plan](specs/spec-nhat-vuong-controller/build.md) records the implementation sequence and outstanding decisions for building the complete specification.
+
+## Implementation
+
+The code lives beside these documents: see the repository [README](../README.md) for layout, run instructions,
+demo accounts and the sprint → story → code → test map.
+
 ## Templates (`templates/`)
 
 | Template | Used at |

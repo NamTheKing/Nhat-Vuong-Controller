@@ -66,3 +66,23 @@ Each drill has a written runbook, expected observations, and a recorded result a
 - File with [templates/bug-report.md](templates/bug-report.md); link to the violated story/criterion when known.
 - Severity: **blocker** (Must path broken / DoD violation) — fixed in-sprint before new work; **major** — next sprint at the latest; **minor** — PO prioritises in backlog.
 - Every fixed bug gets a regression test in the level where it *should* have been caught.
+
+## 7. Implemented suites and commands
+
+| Level | Project / script | Command |
+|-------|------------------|---------|
+| Unit (+ architecture rules) | `tests/Application.Tests` — application core on in-memory SQLite, scriptable device port, settable clock | `dotnet test tests/Application.Tests` |
+| Coverage gate (NFR-08) | coverlet on `NhatVuong.Application` | `dotnet test tests/Application.Tests -p:CollectCoverage=true "-p:Include=[NhatVuong.Application]*" -p:Threshold=60 -p:ThresholdType=line` |
+| Integration / E2E | `tests/Integration.Tests` — real server, embedded broker on a free port, `VirtualDevice` modules, HTTPS LAN endpoint | `dotnet test tests/Integration.Tests` |
+| Load (NFR-02, US-26) | `tests/load/api-load.js` with a simulator fleet | see `tests/load/README.md` |
+| Latency (NFR-01) | audit-timestamp P95 over the last 100 app commands | `GET /api/v1/metrics/command-latency?last=100` |
+| Recovery (US-27) | `deploy/scripts/recovery-drill.ps1` | `-Mode docker` or `-Mode process -Restart` |
+
+Test names carry the story or NFR id (e.g. `US-03: …`, `NFR-05: …`) so the acceptance-criteria map in §3 can be
+traced to a result. The simulator (`simulator/VirtualDevice.cs`) implements the §2 capabilities: per-device MQTT
+credentials, state reporting, error injection, no-reply and delay faults, disconnect, physical-remote changes,
+cached schedules and 300+ instances (`--fleet 300`).
+
+Results of the first full run (2026-09-29): 111/111 automated tests passed; service-layer line coverage 81.4%;
+recovery drill 2 s. Hardware-in-the-loop, the NFR-06 device matrix, packet capture and the full US-26 campaign
+have not been run.

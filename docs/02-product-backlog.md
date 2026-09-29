@@ -53,3 +53,11 @@ Ordered backlog for the Nhat Vuong Controller. Story definitions and acceptance 
 - New stories: create from [templates/user-story.md](templates/user-story.md), assign the next free `US` number, map source FRs, and insert at the PO's chosen rank.
 - A story ≥ 13 SP must be split before entering a sprint.
 - Update the **Status** column at sprint planning and sprint review — this table is the authoritative snapshot; the issue tracker holds the live task detail.
+
+## Implementation status (2026-09-29)
+
+All 27 stories are implemented in the codebase and their Given–When–Then criteria are covered by automated tests
+against the device simulator (see the story → code → test map in the repository [README](../README.md)). The
+**Status** column above is deliberately unchanged: a story becomes `Done (Sprint NN)` only after PO acceptance at a
+Sprint Review, and the DoD items that need physical evidence (hardware-in-the-loop, NFR-06 on three devices,
+NFR-04 packet capture, the US-26 campaign) are still outstanding.

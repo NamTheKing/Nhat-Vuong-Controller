@@ -2,7 +2,24 @@
 
 Git, review and CI conventions for the Nhat Vuong Controller team. The goal: every change is traceable to a `US-xx` story, reviewed, and verified by CI before it reaches `main`.
 
-## 1. Repository layout (target)
+## 1. Repository layout
+
+As built, the code follows the architecture spine's `src/` layout rather than the original target below:
+
+```
+/src/Domain, /src/Application        Core: entities, policy, command pipeline, services, ports
+/src/Adapters/{Rest,Mqtt,Persistence,Scheduler,Notification}
+/src/Server                          Composition root (API + scheduler + embedded MQTT broker)
+/src/Contracts                       Wire schema shared by server, app and simulator
+/src/Client                          .NET MAUI app (Android 8.0+ / Windows 10+), .resx UI strings
+/simulator                           Virtual device fleet
+/tests                               Unit, integration, load
+/deploy                              Container, systemd, drill scripts
+/docs                                This documentation set + sprint records
+/.github/workflows/ci.yml            CI gates (§5)
+```
+
+Original target:
 
 ```
 /server        Backend: REST API, authorisation, scheduler, MQTT bridge
@@ -66,6 +83,11 @@ Conventional Commits with the story ID in the scope:
 | Nightly (main) | k6/JMeter load profile (NFR-02); latency log analysis (NFR-01); simulator fleet smoke test |
 
 A red `main` build is the whole team's top priority until green.
+
+The gates are implemented in `.github/workflows/ci.yml`: the `server` job builds with warnings as errors, runs the
+unit tests with the coverlet threshold on the service layer, then the integration tests against the simulator
+(including forged-token and broker-ACL tests); the `client` job builds the Windows and Android targets; the
+`secrets` job runs gitleaks. The nightly load profile is `tests/load/api-load.js` (not yet scheduled).
 
 ## 6. Issue tracker conventions
 
