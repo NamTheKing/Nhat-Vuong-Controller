@@ -1,0 +1,16 @@
+# gitleaks configuration for the CI secret scan (docs/05-development-workflow.md §5).
+# The allowlisted paths hold development-only or test values that are public by design;
+# real secrets come from the environment (deploy/.env.example) and are never committed.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Development seed, test fixtures and vendored tooling"
+paths = [
+  '''src/Server/appsettings\.Development\.json''',
+  '''src/Adapters/Persistence/DatabaseInitializer\.cs''',
+  '''tests/.*''',
+  '''simulator/.*''',
+  '''README\.md''',
+  '''\.claude/.*''',
+]

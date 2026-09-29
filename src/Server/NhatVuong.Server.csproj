@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <ItemGroup>
+    <ProjectReference Include="..\Application\NhatVuong.Application.csproj" />
+    <ProjectReference Include="..\Domain\NhatVuong.Domain.csproj" />
+    <ProjectReference Include="..\Contracts\NhatVuong.Contracts.csproj" />
+    <ProjectReference Include="..\Adapters\Persistence\NhatVuong.Adapters.Persistence.csproj" />
+    <ProjectReference Include="..\Adapters\Mqtt\NhatVuong.Adapters.Mqtt.csproj" />
+    <ProjectReference Include="..\Adapters\Rest\NhatVuong.Adapters.Rest.csproj" />
+    <ProjectReference Include="..\Adapters\Scheduler\NhatVuong.Adapters.Scheduler.csproj" />
+    <ProjectReference Include="..\Adapters\Notification\NhatVuong.Adapters.Notification.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+</Project>

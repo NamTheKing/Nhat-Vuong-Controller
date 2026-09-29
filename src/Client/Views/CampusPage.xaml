@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:loc="clr-namespace:NhatVuong.Client.Localization"
+             xmlns:vm="clr-namespace:NhatVuong.Client.ViewModels"
+             xmlns:api="clr-namespace:NhatVuong.Contracts.Api;assembly=NhatVuong.Contracts"
+             x:Class="NhatVuong.Client.Views.CampusPage"
+             x:DataType="vm:CampusViewModel"
+             Title="{loc:Tr Admin_Campus}">
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="8" MaximumWidthRequest="720">
+            <Label Text="{loc:Tr Campus_Buildings}" Style="{StaticResource Section}" />
+            <CollectionView ItemsSource="{Binding Buildings}" SelectionMode="Single" SelectedItem="{Binding SelectedBuilding}" HeightRequest="150">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="api:BuildingDto">
+                        <Label Padding="4,6">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{Binding Code}" FontAttributes="Bold" />
+                                    <Span Text=" — " />
+                                    <Span Text="{Binding Name}" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button Text="{loc:Tr Common_Delete}" Command="{Binding DeleteBuildingCommand}" HorizontalOptions="Start" />
+            <Border Style="{StaticResource Card}">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="{loc:Tr Campus_AddBuilding}" FontAttributes="Bold" />
+                    <Entry Placeholder="{loc:Tr Common_Code}" Text="{Binding NewBuildingCode}" />
+                    <Entry Placeholder="{loc:Tr Common_Name}" Text="{Binding NewBuildingName}" />
+                    <Button Text="{loc:Tr Common_Save}" Style="{StaticResource Primary}" Command="{Binding AddBuildingCommand}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Label Text="{loc:Tr Campus_Rooms}" Style="{StaticResource Section}" />
+            <CollectionView ItemsSource="{Binding Rooms}" SelectionMode="Single" SelectedItem="{Binding SelectedRoom}" HeightRequest="220">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="api:RoomDto">
+                        <Grid ColumnDefinitions="*,Auto" Padding="4,6">
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding Code}" FontAttributes="Bold" />
+                                        <Span Text=" — " />
+                                        <Span Text="{Binding Name}" />
+                                        <Span Text=" (" />
+                                        <Span Text="{Binding BuildingCode}" />
+                                        <Span Text=")" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label Grid.Column="1" Style="{StaticResource MutedLabel}"
+                                   Text="{Binding DeviceCount, Converter={StaticResource ResourceFormat}, ConverterParameter=Campus_DeviceCount}" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button Text="{loc:Tr Common_Delete}" Command="{Binding DeleteRoomCommand}" HorizontalOptions="Start" />
+            <Border Style="{StaticResource Card}">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="{loc:Tr Campus_AddRoom}" FontAttributes="Bold" />
+                    <Picker Title="{loc:Tr Common_Building}" ItemsSource="{Binding Buildings}" SelectedItem="{Binding NewRoomBuilding}" ItemDisplayBinding="{Binding Name, x:DataType=api:BuildingDto}" />
+                    <Entry Placeholder="{loc:Tr Common_Code}" Text="{Binding NewRoomCode}" />
+                    <Entry Placeholder="{loc:Tr Common_Name}" Text="{Binding NewRoomName}" />
+                    <Button Text="{loc:Tr Common_Save}" Style="{StaticResource Primary}" Command="{Binding AddRoomCommand}" />
+                </VerticalStackLayout>
+            </Border>
+            <Label Text="{Binding Message}" Style="{StaticResource ErrorLabel}" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

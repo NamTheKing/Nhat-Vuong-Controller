@@ -1,0 +1,66 @@
+# Single campus host (architecture spine, Deployment): API + scheduler + broker + PostgreSQL.
+#   cp deploy/.env.example deploy/.env   # fill in the secrets
+#   docker compose -f deploy/docker-compose.yml --env-file deploy/.env up -d --build
+#
+# CAP-23 recovery: "restart: unless-stopped" restarts a crashed process; "autoheal" restarts a container whose
+# /health/ready stays unhealthy (hung process). Both are exercised by deploy/scripts/recovery-drill.ps1.
+
+services:
+  db:
+    image: postgres:18
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: nhatvuong
+      POSTGRES_USER: nhatvuong
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD}
+    volumes:
+      - pgdata:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U nhatvuong -d nhatvuong"]
+      interval: 10s
+      retries: 5
+
+  server:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    container_name: nvc-server
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    labels:
+      autoheal: "true"
+    ports:
+      - "8080:8080"
+      - "8883:8883"
+    environment:
+      Database__Provider: Postgres
+      Database__ConnectionString: Host=db;Database=nhatvuong;Username=nhatvuong;Password=${POSTGRES_PASSWORD}
+      Auth__SigningKey: ${JWT_SIGNING_KEY:?set JWT_SIGNING_KEY}
+      Mqtt__ServerPassword: ${MQTT_SERVER_PASSWORD:?set MQTT_SERVER_PASSWORD}
+      Mqtt__CertificatePath: /certs/mqtt.pfx
+      Mqtt__CertificatePassword: ${MQTT_CERT_PASSWORD}
+      Mqtt__AllowUntrustedCertificates: "true"
+      Signing__KeyPath: /keys/grant-signing.pem
+      Seed__AdminEmail: ${ADMIN_EMAIL:?set ADMIN_EMAIL}
+      Seed__AdminPassword: ${ADMIN_PASSWORD:?set ADMIN_PASSWORD}
+      Notifications__SmtpHost: ${SMTP_HOST:-}
+      Notifications__SmtpUser: ${SMTP_USER:-}
+      Notifications__SmtpPassword: ${SMTP_PASSWORD:-}
+    volumes:
+      - ./certs:/certs:ro
+      - keys:/keys
+
+  autoheal:
+    image: willfarrell/autoheal:latest
+    restart: unless-stopped
+    environment:
+      AUTOHEAL_CONTAINER_LABEL: autoheal
+      AUTOHEAL_INTERVAL: 10
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+volumes:
+  pgdata:
+  keys:

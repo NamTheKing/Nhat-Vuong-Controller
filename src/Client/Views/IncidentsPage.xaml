@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:loc="clr-namespace:NhatVuong.Client.Localization"
+             xmlns:vm="clr-namespace:NhatVuong.Client.ViewModels"
+             xmlns:api="clr-namespace:NhatVuong.Contracts.Api;assembly=NhatVuong.Contracts"
+             x:Class="NhatVuong.Client.Views.IncidentsPage"
+             x:DataType="vm:IncidentsViewModel"
+             Title="{loc:Tr Incidents_Title}">
+    <Grid RowDefinitions="Auto,*,Auto" Padding="16,8">
+        <VerticalStackLayout>
+            <Picker ItemsSource="{Binding Statuses}" SelectedItem="{Binding Status}" ItemDisplayBinding="{Binding ., Converter={StaticResource EnumText}}" />
+            <Label Text="{Binding Message}" Style="{StaticResource ErrorLabel}" IsVisible="{Binding Message, Converter={StaticResource NotNull}}" />
+        </VerticalStackLayout>
+        <RefreshView Grid.Row="1" Command="{Binding RefreshCommand}" IsRefreshing="{Binding IsBusy}">
+            <CollectionView ItemsSource="{Binding Incidents}" SelectionMode="Single" SelectedItem="{Binding Selected}">
+                <CollectionView.EmptyView>
+                    <Label Text="{loc:Tr Common_NoData}" Style="{StaticResource MutedLabel}" Margin="0,12" />
+                </CollectionView.EmptyView>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="api:IncidentDto">
+                        <Border Style="{StaticResource Card}">
+                            <VerticalStackLayout Spacing="2">
+                                <Grid ColumnDefinitions="*,Auto">
+                                    <Label FontAttributes="Bold" FontSize="16">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{Binding Code}" />
+                                                <Span Text=" · " />
+                                                <Span Text="{Binding Kind, Converter={StaticResource EnumText}}" />
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Grid.Column="1" Style="{StaticResource MutedLabel}"
+                                           Text="{Binding OccurrenceCount, Converter={StaticResource ResourceFormat}, ConverterParameter=Incidents_Occurrences}" />
+                                </Grid>
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{Binding DeviceName}" />
+                                            <Span Text=" · " />
+                                            <Span Text="{Binding RoomCode}" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Label Text="{Binding Message}" Style="{StaticResource MutedLabel}" />
+                                <Label Style="{StaticResource MutedLabel}">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{Binding OccurredAt, Converter={StaticResource LocalTime}}" />
+                                            <Span Text=" → " />
+                                            <Span Text="{Binding LastOccurredAt, Converter={StaticResource LocalTime}}" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Label TextColor="{StaticResource Brand}" IsVisible="{Binding ResolvedAt, Converter={StaticResource NotNull}}">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="✔ " />
+                                            <Span Text="{Binding ResolvedByName}" />
+                                            <Span Text=" · " />
+                                            <Span Text="{Binding ResolvedAt, Converter={StaticResource LocalTime}}" />
+                                            <Span Text=" — " />
+                                            <Span Text="{Binding ResolutionNote}" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </VerticalStackLayout>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+        <Button Grid.Row="2" Margin="0,8" Text="{loc:Tr Incidents_Resolve}" Style="{StaticResource Primary}" Command="{Binding ResolveCommand}" />
+    </Grid>
+</ContentPage>

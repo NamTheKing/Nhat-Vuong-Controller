@@ -1,0 +1,7 @@
+<Project>
+  <!-- Zero-new-warnings gate (docs/05-development-workflow.md §5) for server-side code.
+       The MAUI client is excluded because platform SDKs emit warnings we do not own. -->
+  <PropertyGroup Condition="'$(UseMaui)' != 'true'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+</Project>

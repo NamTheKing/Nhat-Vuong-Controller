@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:loc="clr-namespace:NhatVuong.Client.Localization"
+             xmlns:vm="clr-namespace:NhatVuong.Client.ViewModels"
+             xmlns:api="clr-namespace:NhatVuong.Contracts.Api;assembly=NhatVuong.Contracts"
+             x:Class="NhatVuong.Client.Views.DevicesPage"
+             x:DataType="vm:DevicesViewModel"
+             Title="{loc:Tr Devices_Title}">
+    <Grid RowDefinitions="Auto,*" Padding="16,8">
+        <VerticalStackLayout>
+            <Label Text="{Binding Message}" Style="{StaticResource ErrorLabel}" IsVisible="{Binding Message, Converter={StaticResource NotNull}}" />
+            <Label Text="{loc:Tr Devices_Empty}" Style="{StaticResource MutedLabel}" IsVisible="{Binding IsEmpty}" />
+        </VerticalStackLayout>
+        <RefreshView Grid.Row="1" Command="{Binding RefreshCommand}" IsRefreshing="{Binding IsBusy}">
+            <CollectionView ItemsSource="{Binding Devices}" SelectionMode="Single" SelectedItem="{Binding Selected}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="api:DeviceDto">
+                        <Border Style="{StaticResource Card}">
+                            <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto,Auto" ColumnSpacing="8">
+                                <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="16" />
+                                <HorizontalStackLayout Grid.Column="1" Spacing="6">
+                                    <Ellipse WidthRequest="10" HeightRequest="10" VerticalOptions="Center"
+                                             Fill="{Binding Connectivity, Converter={StaticResource ConnectivityColor}}" />
+                                    <Label Text="{Binding Connectivity, Converter={StaticResource EnumText}}"
+                                           TextColor="{Binding Connectivity, Converter={StaticResource ConnectivityColor}}" />
+                                </HorizontalStackLayout>
+                                <Label Grid.Row="1" Style="{StaticResource MutedLabel}">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{Binding RoomCode}" />
+                                            <Span Text=" · " />
+                                            <Span Text="{Binding BuildingCode}" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Label Grid.Row="1" Grid.Column="1" FontAttributes="Bold"
+                                       Text="{Binding State.Power, Converter={StaticResource EnumText}}"
+                                       TextColor="{Binding State.Power, Converter={StaticResource PowerColor}}" />
+                                <Label Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource MutedLabel}">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{Binding State.Setpoint, StringFormat='{0:0.0} °C'}" />
+                                            <Span Text="  ·  " />
+                                            <Span Text="{Binding State.Mode, Converter={StaticResource EnumText}}" />
+                                            <Span Text="  ·  " />
+                                            <Span Text="{Binding State.RoomTemperature, StringFormat='{0:0.0} °C'}" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+    </Grid>
+</ContentPage>

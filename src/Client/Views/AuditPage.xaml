@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:loc="clr-namespace:NhatVuong.Client.Localization"
+             xmlns:vm="clr-namespace:NhatVuong.Client.ViewModels"
+             xmlns:api="clr-namespace:NhatVuong.Contracts.Api;assembly=NhatVuong.Contracts"
+             x:Class="NhatVuong.Client.Views.AuditPage"
+             x:DataType="vm:AuditViewModel"
+             Title="{loc:Tr Audit_Title}">
+    <Grid RowDefinitions="Auto,*,Auto" Padding="16,8">
+        <VerticalStackLayout>
+            <Picker ItemsSource="{Binding Filters}" SelectedIndex="{Binding FilterIndex}" />
+            <Label Text="{Binding Message}" Style="{StaticResource ErrorLabel}" IsVisible="{Binding Message, Converter={StaticResource NotNull}}" />
+        </VerticalStackLayout>
+        <RefreshView Grid.Row="1" Command="{Binding RefreshCommand}" IsRefreshing="{Binding IsBusy}">
+            <CollectionView ItemsSource="{Binding Entries}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="api:AuditEntryDto">
+                        <VerticalStackLayout Padding="0,6">
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding RequestedAt, Converter={StaticResource LocalTime}, ConverterParameter='dd/MM HH:mm:ss'}" Style="{StaticResource MutedLabel}" />
+                                        <Span Text="  " />
+                                        <Span Text="{Binding ActorName}" FontAttributes="Bold" />
+                                        <Span Text=" · " />
+                                        <Span Text="{Binding Action, Converter={StaticResource EnumText}}" />
+                                        <Span Text=" " />
+                                        <Span Text="{Binding Value}" />
+                                        <Span Text=" · " />
+                                        <Span Text="{Binding DeviceName}" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label Style="{StaticResource MutedLabel}">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding Result, Converter={StaticResource EnumText}}" FontAttributes="Bold" />
+                                        <Span Text=" · " />
+                                        <Span Text="{Binding Source, Converter={StaticResource EnumText}}" />
+                                        <Span Text=" · " />
+                                        <Span Text="{Binding Detail}" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+        <Button Grid.Row="2" Text="{loc:Tr Common_LoadMore}" Command="{Binding LoadMoreCommand}" IsVisible="{Binding HasMore}" Margin="0,8" />
+    </Grid>
+</ContentPage>

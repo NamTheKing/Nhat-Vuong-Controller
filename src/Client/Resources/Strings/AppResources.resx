@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="App_Title" xml:space="preserve"><value>Nhat Vuong Controller</value></data>
+  <data name="Common_Save" xml:space="preserve"><value>Lưu</value></data>
+  <data name="Common_Delete" xml:space="preserve"><value>Xóa</value></data>
+  <data name="Common_Cancel" xml:space="preserve"><value>Hủy</value></data>
+  <data name="Common_Refresh" xml:space="preserve"><value>Làm mới</value></data>
+  <data name="Common_Ok" xml:space="preserve"><value>Đồng ý</value></data>
+  <data name="Common_Yes" xml:space="preserve"><value>Có</value></data>
+  <data name="Common_No" xml:space="preserve"><value>Không</value></data>
+  <data name="Common_Error" xml:space="preserve"><value>Lỗi</value></data>
+  <data name="Common_Success" xml:space="preserve"><value>Thành công</value></data>
+  <data name="Common_Confirm" xml:space="preserve"><value>Xác nhận</value></data>
+  <data name="Common_ConfirmDelete" xml:space="preserve"><value>Bạn chắc chắn muốn xóa?</value></data>
+  <data name="Common_NoData" xml:space="preserve"><value>Không có dữ liệu</value></data>
+  <data name="Common_New" xml:space="preserve"><value>Thêm mới</value></data>
+  <data name="Common_Name" xml:space="preserve"><value>Tên</value></data>
+  <data name="Common_Code" xml:space="preserve"><value>Mã</value></data>
+  <data name="Common_Room" xml:space="preserve"><value>Phòng</value></data>
+  <data name="Common_Building" xml:space="preserve"><value>Tòa nhà</value></data>
+  <data name="Common_Note" xml:space="preserve"><value>Ghi chú</value></data>
+  <data name="Common_From" xml:space="preserve"><value>Từ</value></data>
+  <data name="Common_To" xml:space="preserve"><value>Đến</value></data>
+  <data name="Common_Date" xml:space="preserve"><value>Ngày</value></data>
+  <data name="Common_LoadMore" xml:space="preserve"><value>Tải thêm</value></data>
+  <data name="Common_Back" xml:space="preserve"><value>Quay lại</value></data>
+  <data name="Common_ServerUnreachable" xml:space="preserve"><value>Không kết nối được máy chủ.</value></data>
+  <data name="Common_SelectFirst" xml:space="preserve"><value>Hãy chọn một mục trong danh sách trước.</value></data>
+  <data name="Login_Title" xml:space="preserve"><value>Đăng nhập</value></data>
+  <data name="Login_Subtitle" xml:space="preserve"><value>Hệ thống điều khiển điều hòa khuôn viên</value></data>
+  <data name="Login_Email" xml:space="preserve"><value>Email do trường cấp</value></data>
+  <data name="Login_Password" xml:space="preserve"><value>Mật khẩu</value></data>
+  <data name="Login_Server" xml:space="preserve"><value>Địa chỉ máy chủ</value></data>
+  <data name="Login_Button" xml:space="preserve"><value>Đăng nhập</value></data>
+  <data name="Login_Required" xml:space="preserve"><value>Vui lòng nhập email và mật khẩu.</value></data>
+  <data name="Tab_Devices" xml:space="preserve"><value>Thiết bị</value></data>
+  <data name="Tab_Classes" xml:space="preserve"><value>Lịch dạy</value></data>
+  <data name="Tab_Incidents" xml:space="preserve"><value>Sự cố</value></data>
+  <data name="Tab_Notifications" xml:space="preserve"><value>Thông báo</value></data>
+  <data name="Tab_Admin" xml:space="preserve"><value>Quản trị</value></data>
+  <data name="Tab_Account" xml:space="preserve"><value>Tài khoản</value></data>
+  <data name="Devices_Title" xml:space="preserve"><value>Điều hòa</value></data>
+  <data name="Devices_Empty" xml:space="preserve"><value>Bạn chưa được phân quyền phòng nào trong hôm nay.</value></data>
+  <data name="Devices_CanControl" xml:space="preserve"><value>Đang có quyền điều khiển</value></data>
+  <data name="Devices_AccessFrom" xml:space="preserve"><value>Có quyền từ {0}</value></data>
+  <data name="Devices_Stale" xml:space="preserve"><value>Dữ liệu cũ — chưa nhận được báo cáo gần đây</value></data>
+  <data name="Device_State" xml:space="preserve"><value>Trạng thái thực tế (đọc từ bo mạch)</value></data>
+  <data name="Device_Power" xml:space="preserve"><value>Nguồn</value></data>
+  <data name="Device_Setpoint" xml:space="preserve"><value>Nhiệt độ đặt</value></data>
+  <data name="Device_RoomTemp" xml:space="preserve"><value>Nhiệt độ phòng</value></data>
+  <data name="Device_Mode" xml:space="preserve"><value>Chế độ</value></data>
+  <data name="Device_Fan" xml:space="preserve"><value>Tốc độ quạt</value></data>
+  <data name="Device_Compressor" xml:space="preserve"><value>Máy nén</value></data>
+  <data name="Device_CompressorRunning" xml:space="preserve"><value>Đang chạy</value></data>
+  <data name="Device_CompressorIdle" xml:space="preserve"><value>Đang nghỉ</value></data>
+  <data name="Device_Error" xml:space="preserve"><value>Mã lỗi</value></data>
+  <data name="Device_ObservedAt" xml:space="preserve"><value>Cập nhật lúc {0}</value></data>
+  <data name="Device_Controls" xml:space="preserve"><value>Điều khiển</value></data>
+  <data name="Device_TurnOn" xml:space="preserve"><value>Bật</value></data>
+  <data name="Device_TurnOff" xml:space="preserve"><value>Tắt</value></data>
+  <data name="Device_Apply" xml:space="preserve"><value>Áp dụng</value></data>
+  <data name="Device_WholeRoom" xml:space="preserve"><value>Áp dụng cho cả phòng</value></data>
+  <data name="Device_NoRights" xml:space="preserve"><value>Bạn không có quyền điều khiển phòng này lúc này.</value></data>
+  <data name="Device_Result_Succeeded" xml:space="preserve"><value>Thành công ({0} ms)</value></data>
+  <data name="Device_Result_Room" xml:space="preserve"><value>Cả phòng: {0}/{1} thiết bị thành công</value></data>
+  <data name="Device_LanReady" xml:space="preserve"><value>Sẵn sàng điều khiển qua LAN nếu mất máy chủ (đến {0})</value></data>
+  <data name="Device_LanUsed" xml:space="preserve"><value>Máy chủ không phản hồi — lệnh đã gửi trực tiếp qua LAN.</value></data>
+  <data name="Device_LanUnavailable" xml:space="preserve"><value>Máy chủ không phản hồi và chưa có quyền điều khiển qua LAN.</value></data>
+  <data name="Device_LanRejected" xml:space="preserve"><value>Thiết bị từ chối lệnh LAN: {0}</value></data>
+  <data name="PowerState_On" xml:space="preserve"><value>Bật</value></data>
+  <data name="PowerState_Off" xml:space="preserve"><value>Tắt</value></data>
+  <data name="AcMode_Cool" xml:space="preserve"><value>Làm lạnh</value></data>
+  <data name="AcMode_Dry" xml:space="preserve"><value>Hút ẩm</value></data>
+  <data name="AcMode_Fan" xml:space="preserve"><value>Quạt</value></data>
+  <data name="FanSpeed_Auto" xml:space="preserve"><value>Tự động</value></data>
+  <data name="FanSpeed_Low" xml:space="preserve"><value>Thấp</value></data>
+  <data name="FanSpeed_Medium" xml:space="preserve"><value>Vừa</value></data>
+  <data name="FanSpeed_High" xml:space="preserve"><value>Cao</value></data>
+  <data name="Connectivity_Online" xml:space="preserve"><value>Trực tuyến</value></data>
+  <data name="Connectivity_Offline" xml:space="preserve"><value>Mất kết nối</value></data>
+  <data name="Connectivity_Fault" xml:space="preserve"><value>Báo lỗi</value></data>
+  <data name="UserRole_Administrator" xml:space="preserve"><value>Quản trị viên</value></data>
+  <data name="UserRole_Lecturer" xml:space="preserve"><value>Giảng viên</value></data>
+  <data name="UserRole_ClassMonitor" xml:space="preserve"><value>Lớp trưởng</value></data>
+  <data name="UserRole_MaintenanceStaff" xml:space="preserve"><value>Nhân viên bảo trì</value></data>
+  <data name="CommandResult_Pending" xml:space="preserve"><value>Đang xử lý</value></data>
+  <data name="CommandResult_Succeeded" xml:space="preserve"><value>Thành công</value></data>
+  <data name="CommandResult_Failed" xml:space="preserve"><value>Thất bại</value></data>
+  <data name="CommandResult_Rejected" xml:space="preserve"><value>Bị từ chối</value></data>
+  <data name="CommandResult_Timeout" xml:space="preserve"><value>Thiết bị không phản hồi</value></data>
+  <data name="CommandAction_PowerOn" xml:space="preserve"><value>Bật</value></data>
+  <data name="CommandAction_PowerOff" xml:space="preserve"><value>Tắt</value></data>
+  <data name="CommandAction_SetTemperature" xml:space="preserve"><value>Đặt nhiệt độ</value></data>
+  <data name="CommandAction_SetMode" xml:space="preserve"><value>Đổi chế độ</value></data>
+  <data name="CommandAction_SetFanSpeed" xml:space="preserve"><value>Đổi tốc độ quạt</value></data>
+  <data name="CommandSource_App" xml:space="preserve"><value>Ứng dụng</value></data>
+  <data name="CommandSource_Scheduler" xml:space="preserve"><value>Lịch tự động</value></data>
+  <data name="CommandSource_Lan" xml:space="preserve"><value>LAN</value></data>
+  <data name="CommandSource_DeviceSchedule" xml:space="preserve"><value>Lịch trên thiết bị</value></data>
+  <data name="RejectionReason_None" xml:space="preserve"><value>—</value></data>
+  <data name="RejectionReason_NoAccess" xml:space="preserve"><value>Bạn không có quyền điều khiển phòng này lúc này.</value></data>
+  <data name="RejectionReason_OutsideOperatingHours" xml:space="preserve"><value>Ngoài giờ hoạt động của khuôn viên.</value></data>
+  <data name="RejectionReason_BelowMinimumSetpoint" xml:space="preserve"><value>Nhiệt độ thấp hơn ngưỡng tối thiểu cho phép.</value></data>
+  <data name="RejectionReason_AboveMaximumSetpoint" xml:space="preserve"><value>Nhiệt độ cao hơn ngưỡng tối đa cho phép.</value></data>
+  <data name="RejectionReason_LecturerPrecedence" xml:space="preserve"><value>Giảng viên vừa điều khiển thiết bị này — lệnh của giảng viên được ưu tiên.</value></data>
+  <data name="RejectionReason_InvalidValue" xml:space="preserve"><value>Giá trị không hợp lệ.</value></data>
+  <data name="RejectionReason_DeviceOffline" xml:space="preserve"><value>Thiết bị đang mất kết nối.</value></data>
+  <data name="GrantSource_Timetable" xml:space="preserve"><value>Thời khóa biểu</value></data>
+  <data name="GrantSource_Temporary" xml:space="preserve"><value>Tạm thời</value></data>
+  <data name="IncidentKind_DeviceError" xml:space="preserve"><value>Lỗi thiết bị</value></data>
+  <data name="IncidentKind_ProlongedDisconnect" xml:space="preserve"><value>Mất kết nối lâu</value></data>
+  <data name="IncidentKind_LongRun" xml:space="preserve"><value>Chạy liên tục quá lâu</value></data>
+  <data name="IncidentStatus_Open" xml:space="preserve"><value>Đang mở</value></data>
+  <data name="IncidentStatus_Resolved" xml:space="preserve"><value>Đã xử lý</value></data>
+  <data name="PreCoolStatus_Pending" xml:space="preserve"><value>Đã hẹn</value></data>
+  <data name="PreCoolStatus_Done" xml:space="preserve"><value>Đã bật</value></data>
+  <data name="PreCoolStatus_Cancelled" xml:space="preserve"><value>Đã hủy</value></data>
+  <data name="PreCoolStatus_Skipped" xml:space="preserve"><value>Bỏ qua</value></data>
+  <data name="PreCoolStatus_Failed" xml:space="preserve"><value>Thất bại</value></data>
+  <data name="Classes_Title" xml:space="preserve"><value>Lịch dạy 7 ngày tới</value></data>
+  <data name="Classes_Empty" xml:space="preserve"><value>Không có lớp nào trong 7 ngày tới.</value></data>
+  <data name="Classes_PreCool" xml:space="preserve"><value>Hẹn bật trước</value></data>
+  <data name="Classes_CancelPreCool" xml:space="preserve"><value>Hủy hẹn</value></data>
+  <data name="Classes_LeadPrompt" xml:space="preserve"><value>Bật điều hòa trước giờ học bao nhiêu phút?</value></data>
+  <data name="Classes_PreCoolAt" xml:space="preserve"><value>Bật lúc {0}</value></data>
+  <data name="Incidents_Title" xml:space="preserve"><value>Sự cố thiết bị</value></data>
+  <data name="Incidents_Resolve" xml:space="preserve"><value>Đánh dấu đã xử lý</value></data>
+  <data name="Incidents_NotePrompt" xml:space="preserve"><value>Ghi chú xử lý (bắt buộc)</value></data>
+  <data name="Incidents_Occurrences" xml:space="preserve"><value>{0} lần</value></data>
+  <data name="Incidents_ResolvedBy" xml:space="preserve"><value>Xử lý bởi {0} lúc {1}: {2}</value></data>
+  <data name="Notifications_Title" xml:space="preserve"><value>Thông báo</value></data>
+  <data name="Notifications_MarkAll" xml:space="preserve"><value>Đánh dấu đã đọc tất cả</value></data>
+  <data name="Notifications_Empty" xml:space="preserve"><value>Không có thông báo.</value></data>
+  <data name="Account_Title" xml:space="preserve"><value>Tài khoản</value></data>
+  <data name="Account_Role" xml:space="preserve"><value>Vai trò</value></data>
+  <data name="Account_Language" xml:space="preserve"><value>Ngôn ngữ giao diện</value></data>
+  <data name="Account_Server" xml:space="preserve"><value>Máy chủ</value></data>
+  <data name="Account_SignOut" xml:space="preserve"><value>Đăng xuất</value></data>
+  <data name="Language_vi" xml:space="preserve"><value>Tiếng Việt</value></data>
+  <data name="Language_en" xml:space="preserve"><value>English</value></data>
+  <data name="Admin_Title" xml:space="preserve"><value>Quản trị hệ thống</value></data>
+  <data name="Admin_Campus" xml:space="preserve"><value>Tòa nhà và phòng</value></data>
+  <data name="Admin_Users" xml:space="preserve"><value>Người dùng</value></data>
+  <data name="Admin_RegisterDevice" xml:space="preserve"><value>Đăng ký thiết bị bằng QR</value></data>
+  <data name="Admin_Timetable" xml:space="preserve"><value>Nhập thời khóa biểu</value></data>
+  <data name="Admin_Grants" xml:space="preserve"><value>Cấp quyền tạm thời</value></data>
+  <data name="Admin_Policy" xml:space="preserve"><value>Tham số vận hành</value></data>
+  <data name="Admin_Audit" xml:space="preserve"><value>Nhật ký điều khiển</value></data>
+  <data name="Admin_Report" xml:space="preserve"><value>Báo cáo thời gian chạy</value></data>
+  <data name="Admin_Latency" xml:space="preserve"><value>Độ trễ lệnh P95 ({0} lệnh gần nhất): {1} ms — {2}</value></data>
+  <data name="Admin_LatencyOk" xml:space="preserve"><value>đạt yêu cầu ≤ 3 giây</value></data>
+  <data name="Admin_LatencyBad" xml:space="preserve"><value>vượt ngưỡng 3 giây</value></data>
+  <data name="Campus_Buildings" xml:space="preserve"><value>Tòa nhà</value></data>
+  <data name="Campus_Rooms" xml:space="preserve"><value>Phòng</value></data>
+  <data name="Campus_AddBuilding" xml:space="preserve"><value>Thêm tòa nhà</value></data>
+  <data name="Campus_AddRoom" xml:space="preserve"><value>Thêm phòng</value></data>
+  <data name="Campus_DeviceCount" xml:space="preserve"><value>{0} thiết bị</value></data>
+  <data name="Users_Email" xml:space="preserve"><value>Email</value></data>
+  <data name="Users_FullName" xml:space="preserve"><value>Họ tên</value></data>
+  <data name="Users_Role" xml:space="preserve"><value>Vai trò</value></data>
+  <data name="Users_Password" xml:space="preserve"><value>Mật khẩu (để trống nếu không đổi)</value></data>
+  <data name="Users_Active" xml:space="preserve"><value>Đang hoạt động</value></data>
+  <data name="Users_Deactivated" xml:space="preserve"><value>Tài khoản đang được tham chiếu nên đã được vô hiệu hóa thay vì xóa.</value></data>
+  <data name="Users_Inactive" xml:space="preserve"><value>(ngừng hoạt động)</value></data>
+  <data name="Register_Title" xml:space="preserve"><value>Đăng ký thiết bị mới</value></data>
+  <data name="Register_Qr" xml:space="preserve"><value>Nội dung mã QR trên module</value></data>
+  <data name="Register_Scan" xml:space="preserve"><value>Quét mã QR</value></data>
+  <data name="Register_Name" xml:space="preserve"><value>Tên hiển thị</value></data>
+  <data name="Register_Button" xml:space="preserve"><value>Đăng ký</value></data>
+  <data name="Register_Credentials" xml:space="preserve"><value>Thông tin MQTT cho module (chỉ hiển thị một lần):</value></data>
+  <data name="Register_Devices" xml:space="preserve"><value>Thiết bị đã đăng ký</value></data>
+  <data name="Register_ScanUnsupported" xml:space="preserve"><value>Thiết bị này không hỗ trợ quét bằng camera; hãy nhập nội dung mã QR.</value></data>
+  <data name="Timetable_Title" xml:space="preserve"><value>Nhập thời khóa biểu</value></data>
+  <data name="Timetable_Help" xml:space="preserve"><value>Tệp CSV hoặc Excel với các cột: timetable_id, room_code, lecturer_email, starts_at, ends_at (giờ địa phương, yyyy-MM-dd HH:mm). Nếu có bất kỳ dòng lỗi nào, tệp sẽ không được nhập.</value></data>
+  <data name="Timetable_Pick" xml:space="preserve"><value>Chọn tệp và nhập</value></data>
+  <data name="Timetable_Imported" xml:space="preserve"><value>Đã nhập {0} buổi học (thay thế {1} buổi cũ).</value></data>
+  <data name="Timetable_Errors" xml:space="preserve"><value>Tệp có lỗi — không dòng nào được nhập:</value></data>
+  <data name="Timetable_Row" xml:space="preserve"><value>Dòng {0}: {1}</value></data>
+  <data name="Grants_Title" xml:space="preserve"><value>Quyền điều khiển tạm thời</value></data>
+  <data name="Grants_User" xml:space="preserve"><value>Người được cấp quyền</value></data>
+  <data name="Grants_Create" xml:space="preserve"><value>Cấp quyền</value></data>
+  <data name="Grants_Revoke" xml:space="preserve"><value>Thu hồi quyền đã chọn</value></data>
+  <data name="Grants_Range" xml:space="preserve"><value>{0} → {1}</value></data>
+  <data name="Grants_StartTime" xml:space="preserve"><value>Giờ bắt đầu</value></data>
+  <data name="Grants_EndTime" xml:space="preserve"><value>Giờ kết thúc</value></data>
+  <data name="Policy_Title" xml:space="preserve"><value>Tham số vận hành</value></data>
+  <data name="Policy_Margin" xml:space="preserve"><value>Biên trước/sau giờ học (phút)</value></data>
+  <data name="Policy_AutoOff" xml:space="preserve"><value>Tự tắt sau giờ học nếu không có lớp kế tiếp (X phút)</value></data>
+  <data name="Policy_LongRun" xml:space="preserve"><value>Cảnh báo chạy liên tục (N giờ)</value></data>
+  <data name="Policy_MinSetpoint" xml:space="preserve"><value>Nhiệt độ tối thiểu (°C)</value></data>
+  <data name="Policy_MaxSetpoint" xml:space="preserve"><value>Nhiệt độ tối đa (°C)</value></data>
+  <data name="Policy_OperatingStart" xml:space="preserve"><value>Giờ mở cửa (HH:mm)</value></data>
+  <data name="Policy_OperatingEnd" xml:space="preserve"><value>Giờ đóng cửa (HH:mm)</value></data>
+  <data name="Policy_Disconnect" xml:space="preserve"><value>Cảnh báo mất kết nối sau (phút)</value></data>
+  <data name="Policy_PreCool" xml:space="preserve"><value>Bật trước mặc định (phút)</value></data>
+  <data name="Policy_Timeout" xml:space="preserve"><value>Chờ phản hồi lệnh (giây)</value></data>
+  <data name="Policy_Freshness" xml:space="preserve"><value>Ngưỡng dữ liệu cũ (giây)</value></data>
+  <data name="Policy_Precedence" xml:space="preserve"><value>Cửa sổ ưu tiên giảng viên (giây)</value></data>
+  <data name="Policy_OfflineThreshold" xml:space="preserve"><value>Thiết bị tự chạy lịch sau khi mất máy chủ (giây)</value></data>
+  <data name="Policy_MaxLanGrant" xml:space="preserve"><value>Thời hạn tối đa quyền LAN (phút)</value></data>
+  <data name="Policy_CatchUp" xml:space="preserve"><value>Bù lịch bị lỡ sau khởi động lại (phút)</value></data>
+  <data name="Policy_TimeZone" xml:space="preserve"><value>Múi giờ khuôn viên</value></data>
+  <data name="Policy_Saved" xml:space="preserve"><value>Đã lưu tham số vận hành.</value></data>
+  <data name="Audit_Title" xml:space="preserve"><value>Nhật ký điều khiển</value></data>
+  <data name="Audit_AllResults" xml:space="preserve"><value>Tất cả kết quả</value></data>
+  <data name="Report_Title" xml:space="preserve"><value>Thời gian chạy theo tháng</value></data>
+  <data name="Report_Year" xml:space="preserve"><value>Năm</value></data>
+  <data name="Report_Month" xml:space="preserve"><value>Tháng</value></data>
+  <data name="Report_Load" xml:space="preserve"><value>Xem báo cáo</value></data>
+  <data name="Report_Total" xml:space="preserve"><value>Tổng: {0} giờ</value></data>
+  <data name="Report_Hours" xml:space="preserve"><value>{0} giờ</value></data>
+  <data name="Report_NoData" xml:space="preserve"><value>Không có dữ liệu vận hành trong tháng này.</value></data>
+  <data name="Error_InvalidCredentials" xml:space="preserve"><value>Email hoặc mật khẩu không đúng.</value></data>
+  <data name="Error_Unauthorized" xml:space="preserve"><value>Phiên đăng nhập đã hết hạn, vui lòng đăng nhập lại.</value></data>
+  <data name="Error_Forbidden" xml:space="preserve"><value>Bạn không có quyền dùng chức năng này.</value></data>
+  <data name="Error_NoAccess" xml:space="preserve"><value>Bạn không có quyền thực hiện thao tác này.</value></data>
+  <data name="Error_DuplicateDevice" xml:space="preserve"><value>Thiết bị này đã được đăng ký.</value></data>
+  <data name="Error_RoomHasDevices" xml:space="preserve"><value>Phòng vẫn còn thiết bị nên không thể xóa.</value></data>
+  <data name="Error_RoomHasTimetable" xml:space="preserve"><value>Phòng vẫn còn trong thời khóa biểu.</value></data>
+  <data name="Error_BuildingHasRooms" xml:space="preserve"><value>Tòa nhà còn phòng nên không thể xóa.</value></data>
+  <data name="Error_DuplicateRoomCode" xml:space="preserve"><value>Mã phòng đã tồn tại.</value></data>
+  <data name="Error_DuplicateBuildingCode" xml:space="preserve"><value>Mã tòa nhà đã tồn tại.</value></data>
+  <data name="Error_DuplicateEmail" xml:space="preserve"><value>Email đã được sử dụng.</value></data>
+  <data name="Error_InvalidEmail" xml:space="preserve"><value>Email không hợp lệ.</value></data>
+  <data name="Error_WeakPassword" xml:space="preserve"><value>Mật khẩu phải có ít nhất 8 ký tự.</value></data>
+  <data name="Error_Required" xml:space="preserve"><value>Vui lòng nhập đủ thông tin bắt buộc.</value></data>
+  <data name="Error_InvalidQrCode" xml:space="preserve"><value>Mã QR không chứa mã thiết bị hợp lệ.</value></data>
+  <data name="Error_NoteRequired" xml:space="preserve"><value>Vui lòng nhập ghi chú xử lý.</value></data>
+  <data name="Error_TooLate" xml:space="preserve"><value>Đã quá thời điểm bật trước.</value></data>
+  <data name="Error_OutsideOperatingHours" xml:space="preserve"><value>Thời điểm này nằm ngoài giờ hoạt động.</value></data>
+  <data name="Error_PreCoolExists" xml:space="preserve"><value>Lớp này đã được hẹn bật trước.</value></data>
+  <data name="Error_InvalidLeadTime" xml:space="preserve"><value>Thời gian bật trước phải từ 1 đến 120 phút.</value></data>
+  <data name="Error_InvalidRange" xml:space="preserve"><value>Khoảng thời gian không hợp lệ.</value></data>
+  <data name="Error_RangeInPast" xml:space="preserve"><value>Khoảng thời gian đã kết thúc.</value></data>
+  <data name="Error_RangeTooLong" xml:space="preserve"><value>Quyền tạm thời tối đa 31 ngày.</value></data>
+  <data name="Error_InvalidPolicy" xml:space="preserve"><value>Có tham số nằm ngoài phạm vi cho phép.</value></data>
+  <data name="Error_CannotDeleteSelf" xml:space="preserve"><value>Không thể xóa tài khoản của chính bạn.</value></data>
+  <data name="Error_UnsupportedFileType" xml:space="preserve"><value>Chỉ chấp nhận tệp .csv hoặc .xlsx.</value></data>
+  <data name="Error_MissingColumns" xml:space="preserve"><value>Tệp thiếu cột bắt buộc.</value></data>
+  <data name="Error_EmptyFile" xml:space="preserve"><value>Tệp không có dữ liệu.</value></data>
+  <data name="Error_GrantAlreadyRevoked" xml:space="preserve"><value>Quyền này đã bị thu hồi.</value></data>
+  <data name="Error_IncidentAlreadyResolved" xml:space="preserve"><value>Sự cố đã được xử lý.</value></data>
+  <data name="ImportError_MissingField" xml:space="preserve"><value>Thiếu dữ liệu bắt buộc</value></data>
+  <data name="ImportError_InvalidDateTime" xml:space="preserve"><value>Ngày giờ không đúng định dạng</value></data>
+  <data name="ImportError_RoomNotFound" xml:space="preserve"><value>Không tìm thấy phòng</value></data>
+  <data name="ImportError_LecturerNotFound" xml:space="preserve"><value>Không tìm thấy giảng viên</value></data>
+  <data name="ImportError_NotALecturer" xml:space="preserve"><value>Người dùng không phải giảng viên</value></data>
+  <data name="ImportError_EndBeforeStart" xml:space="preserve"><value>Giờ kết thúc trước giờ bắt đầu</value></data>
+  <data name="ImportError_DuplicateTimetableId" xml:space="preserve"><value>Trùng mã buổi học</value></data>
+  <data name="ImportError_RoomDoubleBooked" xml:space="preserve"><value>Phòng bị trùng lịch</value></data>
+  <data name="ImportError_LecturerDoubleBooked" xml:space="preserve"><value>Giảng viên bị trùng lịch</value></data>
+</root>

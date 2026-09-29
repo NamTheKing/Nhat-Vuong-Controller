@@ -1,0 +1,26 @@
+# Build output
+bin/
+obj/
+*.user
+*.suo
+.vs/
+.vscode/
+TestResults/
+coverage/
+*.coverage
+coverage.*.xml
+
+# Local databases and runtime state
+*.db
+*.db-shm
+*.db-wal
+
+# Secrets and key material — never commit (docs/05-development-workflow.md §7)
+keys/
+*.pfx
+*.p12
+*.pem
+deploy/.env
+deploy/certs/
+simulator-fleet.json
+fleet.json

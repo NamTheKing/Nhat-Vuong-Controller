@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:loc="clr-namespace:NhatVuong.Client.Localization"
+             xmlns:vm="clr-namespace:NhatVuong.Client.ViewModels"
+             x:Class="NhatVuong.Client.Views.AdminPage"
+             x:DataType="vm:AdminViewModel"
+             Title="{loc:Tr Admin_Title}">
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="10" MaximumWidthRequest="560">
+            <Label Text="{Binding LatencyText}" Style="{StaticResource MutedLabel}" IsVisible="{Binding LatencyText, Converter={StaticResource NotNull}}" />
+            <Button Text="{loc:Tr Admin_Campus}" Command="{Binding GoCommand}" CommandParameter="campus" />
+            <Button Text="{loc:Tr Admin_Users}" Command="{Binding GoCommand}" CommandParameter="users" />
+            <Button Text="{loc:Tr Admin_RegisterDevice}" Command="{Binding GoCommand}" CommandParameter="register-device" />
+            <Button Text="{loc:Tr Admin_Timetable}" Command="{Binding GoCommand}" CommandParameter="timetable" />
+            <Button Text="{loc:Tr Admin_Grants}" Command="{Binding GoCommand}" CommandParameter="grants" />
+            <Button Text="{loc:Tr Admin_Policy}" Command="{Binding GoCommand}" CommandParameter="policy" />
+            <Button Text="{loc:Tr Admin_Audit}" Command="{Binding GoCommand}" CommandParameter="audit" />
+            <Button Text="{loc:Tr Admin_Report}" Command="{Binding GoCommand}" CommandParameter="report" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

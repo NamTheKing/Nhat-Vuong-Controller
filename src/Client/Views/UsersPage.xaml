@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:loc="clr-namespace:NhatVuong.Client.Localization"
+             xmlns:vm="clr-namespace:NhatVuong.Client.ViewModels"
+             xmlns:api="clr-namespace:NhatVuong.Contracts.Api;assembly=NhatVuong.Contracts"
+             x:Class="NhatVuong.Client.Views.UsersPage"
+             x:DataType="vm:UsersViewModel"
+             Title="{loc:Tr Admin_Users}">
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="8" MaximumWidthRequest="720">
+            <CollectionView ItemsSource="{Binding Users}" SelectionMode="Single" SelectedItem="{Binding Selected}" HeightRequest="300">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="api:UserDto">
+                        <VerticalStackLayout Padding="4,6">
+                            <Label FontAttributes="Bold">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding FullName}" />
+                                        <Span Text="  " />
+                                        <Span Text="{Binding Role, Converter={StaticResource EnumText}}" TextColor="{StaticResource Brand}" FontAttributes="None" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label Text="{Binding Email}" Style="{StaticResource MutedLabel}" />
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Border Style="{StaticResource Card}">
+                <VerticalStackLayout Spacing="6">
+                    <Entry Placeholder="{loc:Tr Users_Email}" Text="{Binding Email}" Keyboard="Email" />
+                    <Entry Placeholder="{loc:Tr Users_FullName}" Text="{Binding FullName}" />
+                    <Picker Title="{loc:Tr Users_Role}" ItemsSource="{Binding Roles}" SelectedItem="{Binding Role}" ItemDisplayBinding="{Binding ., Converter={StaticResource EnumText}}" />
+                    <Entry Placeholder="{loc:Tr Users_Password}" Text="{Binding Password}" IsPassword="True" />
+                    <HorizontalStackLayout Spacing="8">
+                        <CheckBox IsChecked="{Binding IsActive}" />
+                        <Label Text="{loc:Tr Users_Active}" VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                    <Grid ColumnDefinitions="*,*,*" ColumnSpacing="8">
+                        <Button Text="{loc:Tr Common_New}" Command="{Binding NewCommand}" />
+                        <Button Grid.Column="1" Text="{loc:Tr Common_Save}" Style="{StaticResource Primary}" Command="{Binding SaveCommand}" />
+                        <Button Grid.Column="2" Text="{loc:Tr Common_Delete}" Command="{Binding DeleteCommand}" />
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+            <Label Text="{Binding Message}" Style="{StaticResource ErrorLabel}" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

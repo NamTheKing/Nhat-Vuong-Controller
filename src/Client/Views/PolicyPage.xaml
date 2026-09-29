@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:loc="clr-namespace:NhatVuong.Client.Localization"
+             xmlns:vm="clr-namespace:NhatVuong.Client.ViewModels"
+             x:Class="NhatVuong.Client.Views.PolicyPage"
+             x:DataType="vm:PolicyViewModel"
+             Title="{loc:Tr Policy_Title}">
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Margin" Value="0,8,0,0" />
+        </Style>
+    </ContentPage.Resources>
+    <ScrollView>
+        <VerticalStackLayout Padding="16" MaximumWidthRequest="560">
+            <Label Text="{loc:Tr Policy_Margin}" />
+            <Entry Text="{Binding ControlMarginMinutes}" Keyboard="Numeric" />
+            <Label Text="{loc:Tr Policy_AutoOff}" />
+            <Entry Text="{Binding AutoOffIdleMinutes}" Keyboard="Numeric" />
+            <Label Text="{loc:Tr Policy_LongRun}" />
+            <Entry Text="{Binding LongRunAlertHours}" Keyboard="Numeric" />
+            <Label Text="{loc:Tr Policy_MinSetpoint}" />
+            <Entry Text="{Binding MinSetpoint}" Keyboard="Numeric" />
+            <Label Text="{loc:Tr Policy_MaxSetpoint}" />
+            <Entry Text="{Binding MaxSetpoint}" Keyboard="Numeric" />
+            <Label Text="{loc:Tr Policy_OperatingStart}" />
+            <Entry Text="{Binding OperatingStart}" />
+            <Label Text="{loc:Tr Policy_OperatingEnd}" />
+            <Entry Text="{Binding OperatingEnd}" />
+            <Label Text="{loc:Tr Policy_Disconnect}" />
+            <Entry Text="{Binding DisconnectAlertMinutes}" Keyboard="Numeric" />
+            <Label Text="{loc:Tr Policy_PreCool}" />
+            <Entry Text="{Binding DefaultPreCoolLeadMinutes}" Keyboard="Numeric" />
+            <Label Text="{loc:Tr Policy_Timeout}" />
+            <Entry Text="{Binding CommandTimeoutSeconds}" Keyboard="Numeric" />
+            <Label Text="{loc:Tr Policy_Freshness}" />
+            <Entry Text="{Binding StateFreshnessSeconds}" Keyboard="Numeric" />
+            <Label Text="{loc:Tr Policy_Precedence}" />
+            <Entry Text="{Binding LecturerPrecedenceSeconds}" Keyboard="Numeric" />
+            <Label Text="{loc:Tr Policy_OfflineThreshold}" />
+            <Entry Text="{Binding DeviceOfflineThresholdSeconds}" Keyboard="Numeric" />
+            <Label Text="{loc:Tr Policy_MaxLanGrant}" />
+            <Entry Text="{Binding MaxLanGrantMinutes}" Keyboard="Numeric" />
+            <Label Text="{loc:Tr Policy_CatchUp}" />
+            <Entry Text="{Binding ScheduleCatchUpMinutes}" Keyboard="Numeric" />
+            <Label Text="{loc:Tr Policy_TimeZone}" />
+            <Entry Text="{Binding CampusTimeZone}" />
+            <Button Text="{loc:Tr Common_Save}" Style="{StaticResource Primary}" Command="{Binding SaveCommand}" Margin="0,16" />
+            <Label Text="{Binding Message}" Style="{StaticResource ErrorLabel}" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

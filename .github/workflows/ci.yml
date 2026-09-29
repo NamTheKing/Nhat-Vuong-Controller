@@ -1,0 +1,61 @@
+# CI gates from docs/05-development-workflow.md §5.
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  server:
+    name: Server — build, unit (coverage gate), integration
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - name: Build (warnings are errors)
+        run: |
+          dotnet build src/Server -c Release
+          dotnet build simulator -c Release
+      - name: Unit tests + service-layer coverage >= 60% (NFR-08)
+        run: >
+          dotnet test tests/Application.Tests -c Release
+          -p:CollectCoverage=true "-p:Include=[NhatVuong.Application]*"
+          -p:Threshold=60 -p:ThresholdType=line
+          -p:CoverletOutputFormat=cobertura -p:CoverletOutput=${{ github.workspace }}/coverage/
+      - name: Integration tests over real MQTT against the simulator (NFR-04, NFR-05)
+        run: dotnet test tests/Integration.Tests -c Release
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: coverage
+          path: coverage/
+
+  client:
+    name: Client — Windows and Android builds (NFR-06)
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - uses: actions/setup-java@v4
+        with:
+          distribution: microsoft
+          java-version: '21'
+      - run: dotnet workload install maui
+      - run: dotnet build src/Client -f net10.0-windows10.0.19041.0 -c Release
+      - run: dotnet build src/Client -f net10.0-android -c Release
+
+  secrets:
+    name: Secret scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

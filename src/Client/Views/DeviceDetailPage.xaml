@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:loc="clr-namespace:NhatVuong.Client.Localization"
+             xmlns:vm="clr-namespace:NhatVuong.Client.ViewModels"
+             x:Class="NhatVuong.Client.Views.DeviceDetailPage"
+             x:DataType="vm:DeviceDetailViewModel"
+             Title="{Binding Device.Name}">
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="4" MaximumWidthRequest="720">
+            <!-- US-08 / US-10: true state and connectivity -->
+            <Border Style="{StaticResource Card}">
+                <VerticalStackLayout Spacing="6">
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label Text="{Binding Device.RoomName}" Style="{StaticResource Section}" Margin="0" />
+                        <HorizontalStackLayout Grid.Column="1" Spacing="6">
+                            <Ellipse WidthRequest="12" HeightRequest="12" VerticalOptions="Center"
+                                     Fill="{Binding Device.Connectivity, Converter={StaticResource ConnectivityColor}}" />
+                            <Label Text="{Binding Device.Connectivity, Converter={StaticResource EnumText}}" FontAttributes="Bold"
+                                   TextColor="{Binding Device.Connectivity, Converter={StaticResource ConnectivityColor}}" />
+                        </HorizontalStackLayout>
+                    </Grid>
+                    <Label Text="{loc:Tr Device_State}" Style="{StaticResource MutedLabel}" />
+                    <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="6">
+                        <Label Text="{loc:Tr Device_Power}" />
+                        <Label Grid.Column="1" FontAttributes="Bold" Text="{Binding Device.State.Power, Converter={StaticResource EnumText}}"
+                               TextColor="{Binding Device.State.Power, Converter={StaticResource PowerColor}}" />
+                        <Label Grid.Row="1" Text="{loc:Tr Device_Setpoint}" />
+                        <Label Grid.Row="1" Grid.Column="1" FontAttributes="Bold" Text="{Binding Device.State.Setpoint, StringFormat='{0:0.0} °C'}" />
+                        <Label Grid.Row="2" Text="{loc:Tr Device_RoomTemp}" />
+                        <Label Grid.Row="2" Grid.Column="1" Text="{Binding Device.State.RoomTemperature, StringFormat='{0:0.0} °C'}" />
+                        <Label Grid.Row="3" Text="{loc:Tr Device_Mode}" />
+                        <Label Grid.Row="3" Grid.Column="1">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{Binding Device.State.Mode, Converter={StaticResource EnumText}}" />
+                                    <Span Text=" · " />
+                                    <Span Text="{Binding Device.State.Fan, Converter={StaticResource EnumText}}" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </Grid>
+                    <Grid ColumnDefinitions="*,*">
+                        <Label Text="{loc:Tr Device_Compressor}" />
+                        <HorizontalStackLayout Grid.Column="1">
+                            <Label Text="{loc:Tr Device_CompressorRunning}" IsVisible="{Binding Device.State.CompressorRunning}" />
+                            <Label Text="{loc:Tr Device_CompressorIdle}" IsVisible="{Binding Device.State.CompressorRunning, Converter={StaticResource InverseBool}}" />
+                        </HorizontalStackLayout>
+                    </Grid>
+                    <Label Style="{StaticResource ErrorLabel}" IsVisible="{Binding Device.State.ErrorCode, Converter={StaticResource NotNull}}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{loc:Tr Device_Error}" />
+                                <Span Text=": " />
+                                <Span Text="{Binding Device.State.ErrorCode}" FontAttributes="Bold" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Style="{StaticResource MutedLabel}" Text="{Binding Device.State.ObservedAt, Converter={StaticResource ResourceFormat}, ConverterParameter=Device_ObservedAt}" />
+                    <Label Text="{loc:Tr Devices_Stale}" Style="{StaticResource ErrorLabel}" FontSize="13" IsVisible="{Binding Device.IsStale}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- US-06 / US-07 / US-11 / US-14: controls; the server re-checks every command -->
+            <Border Style="{StaticResource Card}">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="{loc:Tr Device_Controls}" Style="{StaticResource Section}" Margin="0" />
+                    <Label Text="{loc:Tr Device_NoRights}" Style="{StaticResource MutedLabel}" IsVisible="{Binding Device.CanControlNow, Converter={StaticResource InverseBool}}" />
+
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+                        <Button Text="{loc:Tr Device_TurnOn}" Style="{StaticResource Primary}" Command="{Binding PowerOnCommand}" AutomationId="PowerOn" />
+                        <Button Grid.Column="1" Text="{loc:Tr Device_TurnOff}" Command="{Binding PowerOffCommand}" AutomationId="PowerOff" />
+                    </Grid>
+
+                    <Label Text="{loc:Tr Device_Setpoint}" />
+                    <Grid ColumnDefinitions="Auto,*,Auto,Auto" ColumnSpacing="8">
+                        <Button Text="−" WidthRequest="48" Command="{Binding DecreaseCommand}" />
+                        <Label Grid.Column="1" Text="{Binding TargetSetpointText}" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" />
+                        <Button Grid.Column="2" Text="+" WidthRequest="48" Command="{Binding IncreaseCommand}" />
+                        <Button Grid.Column="3" Text="{loc:Tr Device_Apply}" Command="{Binding ApplyTemperatureCommand}" />
+                    </Grid>
+
+                    <Label Text="{loc:Tr Device_Mode}" />
+                    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
+                        <Picker ItemsSource="{Binding Modes}" SelectedItem="{Binding SelectedMode}" ItemDisplayBinding="{Binding ., Converter={StaticResource EnumText}}" />
+                        <Button Grid.Column="1" Text="{loc:Tr Device_Apply}" Command="{Binding ApplyModeCommand}" />
+                    </Grid>
+
+                    <Label Text="{loc:Tr Device_Fan}" />
+                    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
+                        <Picker ItemsSource="{Binding FanSpeeds}" SelectedItem="{Binding SelectedFan}" ItemDisplayBinding="{Binding ., Converter={StaticResource EnumText}}" />
+                        <Button Grid.Column="1" Text="{loc:Tr Device_Apply}" Command="{Binding ApplyFanCommand}" />
+                    </Grid>
+
+                    <HorizontalStackLayout Spacing="8">
+                        <Switch IsToggled="{Binding WholeRoom}" />
+                        <Label Text="{loc:Tr Device_WholeRoom}" VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+
+                    <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+                    <Label Text="{Binding ResultText}" FontAttributes="Bold" IsVisible="{Binding ResultIsError, Converter={StaticResource InverseBool}}" TextColor="{StaticResource Brand}" />
+                    <Label Text="{Binding ResultText}" FontAttributes="Bold" IsVisible="{Binding ResultIsError}" Style="{StaticResource ErrorLabel}" />
+                    <Label Text="{Binding LanStatus}" Style="{StaticResource MutedLabel}" IsVisible="{Binding LanStatus, Converter={StaticResource NotNull}}" />
+                    <Label Text="{Binding Message}" Style="{StaticResource ErrorLabel}" IsVisible="{Binding Message, Converter={StaticResource NotNull}}" />
+                </VerticalStackLayout>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:loc="clr-namespace:NhatVuong.Client.Localization"
+             xmlns:vm="clr-namespace:NhatVuong.Client.ViewModels"
+             x:Class="NhatVuong.Client.Views.AccountPage"
+             x:DataType="vm:AccountViewModel"
+             Title="{loc:Tr Account_Title}">
+    <VerticalStackLayout Padding="16" Spacing="10" MaximumWidthRequest="560">
+        <Border Style="{StaticResource Card}">
+            <VerticalStackLayout Spacing="4">
+                <Label Text="{Binding FullName}" Style="{StaticResource Title}" />
+                <Label Text="{Binding Email}" />
+                <Label Style="{StaticResource MutedLabel}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{loc:Tr Account_Role}" />
+                            <Span Text=": " />
+                            <Span Text="{Binding RoleText}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label Style="{StaticResource MutedLabel}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{loc:Tr Account_Server}" />
+                            <Span Text=": " />
+                            <Span Text="{Binding Server}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </VerticalStackLayout>
+        </Border>
+        <Label Text="{loc:Tr Account_Language}" Style="{StaticResource Section}" />
+        <Picker ItemsSource="{Binding Languages}" SelectedIndex="{Binding SelectedLanguageIndex}" />
+        <Button Text="{loc:Tr Account_SignOut}" Command="{Binding SignOutCommand}" Margin="0,20,0,0" />
+    </VerticalStackLayout>
+</ContentPage>

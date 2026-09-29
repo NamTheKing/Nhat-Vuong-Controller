@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="Actor_AutoOff" xml:space="preserve"><value>System (auto-off after class)</value></data>
+  <data name="Actor_Closing" xml:space="preserve"><value>System (outside operating hours)</value></data>
+  <data name="Actor_PreCool" xml:space="preserve"><value>System (pre-cool scheduled by {0})</value></data>
+  <data name="Actor_DeviceSchedule" xml:space="preserve"><value>Device (cached schedule while server unreachable)</value></data>
+  <data name="Actor_LanUnknown" xml:space="preserve"><value>LAN user</value></data>
+  <data name="Command_Timeout" xml:space="preserve"><value>The device did not respond within {0} seconds.</value></data>
+  <data name="Command_DeviceOffline" xml:space="preserve"><value>The device is offline.</value></data>
+  <data name="Command_GatewayDown" xml:space="preserve"><value>The server is not connected to the MQTT broker.</value></data>
+  <data name="Command_NoAccess" xml:space="preserve"><value>You have no control rights for this room at this time.</value></data>
+  <data name="Command_Precedence" xml:space="preserve"><value>Lecturer {0} has just controlled this device; the lecturer's command takes precedence.</value></data>
+  <data name="Command_Replayed" xml:space="preserve"><value>Replayed after the device reconnected.</value></data>
+  <data name="Notify_Category_Incident" xml:space="preserve"><value>Incident</value></data>
+  <data name="Notify_Category_Alert" xml:space="preserve"><value>Alert</value></data>
+  <data name="Notify_Category_Control" xml:space="preserve"><value>Control</value></data>
+  <data name="Notify_DeviceError_Title" xml:space="preserve"><value>Device reported error {0}</value></data>
+  <data name="Notify_DeviceError_Body" xml:space="preserve"><value>Device {0} (room {1}) reported error code {2}. {3}</value></data>
+  <data name="Notify_Disconnect_Title" xml:space="preserve"><value>Device disconnected too long</value></data>
+  <data name="Notify_Disconnect_Body" xml:space="preserve"><value>Device {0} (room {1}) has been disconnected for more than {2} minutes during working hours.</value></data>
+  <data name="Notify_LongRun_Title" xml:space="preserve"><value>Air conditioner running too long</value></data>
+  <data name="Notify_LongRun_Body" xml:space="preserve"><value>Device {0} (room {1}) has been running continuously for more than {2} hours.</value></data>
+  <data name="Notify_PrecedenceRejected_Title" xml:space="preserve"><value>Command rejected: lecturer precedence</value></data>
+  <data name="Notify_PrecedenceRejected_Body" xml:space="preserve"><value>Your command on device {0} was rejected because lecturer {1} has just controlled it.</value></data>
+  <data name="Notify_Overridden_Title" xml:space="preserve"><value>Your command was overridden by the lecturer</value></data>
+  <data name="Notify_Overridden_Body" xml:space="preserve"><value>Lecturer {0} changed the settings of device {1}.</value></data>
+  <data name="Incident_Disconnect_Message" xml:space="preserve"><value>Disconnected for more than {0} minutes during working hours.</value></data>
+  <data name="Incident_LongRun_Message" xml:space="preserve"><value>Running continuously for more than {0} hours.</value></data>
+  <data name="PreCool_Outcome_Done" xml:space="preserve"><value>Switched on {0}/{1} units.</value></data>
+  <data name="PreCool_Outcome_OutsideHours" xml:space="preserve"><value>Skipped: outside operating hours.</value></data>
+  <data name="PreCool_Outcome_Missed" xml:space="preserve"><value>Skipped: missed beyond the catch-up window after a restart.</value></data>
+  <data name="PreCool_Outcome_Replaced" xml:space="preserve"><value>Cancelled: the timetable was re-imported.</value></data>
+  <data name="PreCool_Outcome_Device" xml:space="preserve"><value>Executed by the device while the server was unreachable.</value></data>
+  <data name="PreCool_Outcome_Cancelled" xml:space="preserve"><value>Cancelled by the user.</value></data>
+  <data name="Reject_OutsideHours" xml:space="preserve"><value>Outside campus operating hours ({0}-{1}).</value></data>
+  <data name="Reject_BelowMin" xml:space="preserve"><value>Setpoint is below the minimum of {0}°C.</value></data>
+  <data name="Reject_AboveMax" xml:space="preserve"><value>Setpoint is above the maximum of {0}°C.</value></data>
+  <data name="Reject_InvalidValue" xml:space="preserve"><value>Invalid command value.</value></data>
+</root>

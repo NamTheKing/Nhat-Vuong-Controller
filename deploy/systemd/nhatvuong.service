@@ -1,0 +1,26 @@
+# Bare-metal alternative to docker-compose (CAP-23). Install:
+#   sudo cp deploy/systemd/nhatvuong.service deploy/systemd/nhatvuong-health.* /etc/systemd/system/
+#   sudo systemctl daemon-reload && sudo systemctl enable --now nhatvuong nhatvuong-health.timer
+# Secrets live in /etc/nhatvuong/env (mode 600), same variables as deploy/.env.example but in
+# ASP.NET Core form, e.g. Auth__SigningKey=..., Mqtt__ServerPassword=...
+
+[Unit]
+Description=Nhat Vuong Controller server (API, scheduler, MQTT broker)
+After=network-online.target postgresql.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=nhatvuong
+WorkingDirectory=/opt/nhatvuong
+EnvironmentFile=/etc/nhatvuong/env
+Environment=ASPNETCORE_ENVIRONMENT=Production
+Environment=ASPNETCORE_URLS=http://127.0.0.1:8080
+ExecStart=/usr/bin/dotnet /opt/nhatvuong/NhatVuong.Server.dll
+# Crash → restart after 5 s; never give up.
+Restart=always
+RestartSec=5
+StartLimitIntervalSec=0
+
+[Install]
+WantedBy=multi-user.target

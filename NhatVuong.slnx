@@ -1,0 +1,44 @@
+<Solution>
+  <Folder Name="/simulator/">
+    <Project Path="simulator/NhatVuong.Simulator.csproj" />
+  </Folder>
+  <Folder Name="/src/" />
+  <Folder Name="/src/Adapters/" />
+  <Folder Name="/src/Adapters/Mqtt/">
+    <Project Path="src/Adapters/Mqtt/NhatVuong.Adapters.Mqtt.csproj" />
+  </Folder>
+  <Folder Name="/src/Adapters/Notification/">
+    <Project Path="src/Adapters/Notification/NhatVuong.Adapters.Notification.csproj" />
+  </Folder>
+  <Folder Name="/src/Adapters/Persistence/">
+    <Project Path="src/Adapters/Persistence/NhatVuong.Adapters.Persistence.csproj" />
+  </Folder>
+  <Folder Name="/src/Adapters/Rest/">
+    <Project Path="src/Adapters/Rest/NhatVuong.Adapters.Rest.csproj" />
+  </Folder>
+  <Folder Name="/src/Adapters/Scheduler/">
+    <Project Path="src/Adapters/Scheduler/NhatVuong.Adapters.Scheduler.csproj" />
+  </Folder>
+  <Folder Name="/src/Application/">
+    <Project Path="src/Application/NhatVuong.Application.csproj" />
+  </Folder>
+  <Folder Name="/src/Client/">
+    <Project Path="src/Client/NhatVuong.Client.csproj" />
+  </Folder>
+  <Folder Name="/src/Contracts/">
+    <Project Path="src/Contracts/NhatVuong.Contracts.csproj" />
+  </Folder>
+  <Folder Name="/src/Domain/">
+    <Project Path="src/Domain/NhatVuong.Domain.csproj" />
+  </Folder>
+  <Folder Name="/src/Server/">
+    <Project Path="src/Server/NhatVuong.Server.csproj" />
+  </Folder>
+  <Folder Name="/tests/" />
+  <Folder Name="/tests/Application.Tests/">
+    <Project Path="tests/Application.Tests/NhatVuong.Application.Tests.csproj" />
+  </Folder>
+  <Folder Name="/tests/Integration.Tests/">
+    <Project Path="tests/Integration.Tests/NhatVuong.Integration.Tests.csproj" />
+  </Folder>
+</Solution>

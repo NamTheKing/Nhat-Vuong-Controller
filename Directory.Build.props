@@ -1,0 +1,10 @@
+<Project>
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Authors>Nhat Vuong Controller team</Authors>
+    <Product>Nhat Vuong Controller</Product>
+    <NeutralLanguage>vi</NeutralLanguage>
+  </PropertyGroup>
+</Project>

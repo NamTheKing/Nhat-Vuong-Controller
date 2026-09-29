@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:loc="clr-namespace:NhatVuong.Client.Localization"
+             xmlns:vm="clr-namespace:NhatVuong.Client.ViewModels"
+             x:Class="NhatVuong.Client.Views.TimetableImportPage"
+             x:DataType="vm:TimetableImportViewModel"
+             Title="{loc:Tr Timetable_Title}">
+    <Grid RowDefinitions="Auto,*" Padding="16" MaximumWidthRequest="720">
+        <VerticalStackLayout Spacing="10">
+            <Label Text="{loc:Tr Timetable_Help}" Style="{StaticResource MutedLabel}" />
+            <Button Text="{loc:Tr Timetable_Pick}" Style="{StaticResource Primary}" Command="{Binding PickAndImportCommand}" />
+            <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+            <Label Text="{Binding ResultText}" FontAttributes="Bold" />
+        </VerticalStackLayout>
+        <CollectionView Grid.Row="1" ItemsSource="{Binding Errors}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="x:String">
+                    <Label Text="{Binding .}" Style="{StaticResource ErrorLabel}" Padding="0,3" />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

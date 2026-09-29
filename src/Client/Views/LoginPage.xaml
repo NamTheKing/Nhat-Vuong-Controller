@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:loc="clr-namespace:NhatVuong.Client.Localization"
+             xmlns:vm="clr-namespace:NhatVuong.Client.ViewModels"
+             x:Class="NhatVuong.Client.Views.LoginPage"
+             x:DataType="vm:LoginViewModel"
+             NavigationPage.HasNavigationBar="False">
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="14" MaximumWidthRequest="460" VerticalOptions="Center">
+            <Label Text="{loc:Tr App_Title}" FontSize="28" FontAttributes="Bold" TextColor="{StaticResource Brand}" HorizontalOptions="Center" />
+            <Label Text="{loc:Tr Login_Subtitle}" Style="{StaticResource MutedLabel}" HorizontalOptions="Center" />
+
+            <Label Text="{loc:Tr Login_Email}" Margin="0,16,0,0" />
+            <Entry Text="{Binding Email}" Keyboard="Email" AutomationId="Email" />
+
+            <Label Text="{loc:Tr Login_Password}" />
+            <Entry Text="{Binding Password}" IsPassword="True" AutomationId="Password" ReturnCommand="{Binding LoginCommand}" />
+
+            <Label Text="{loc:Tr Login_Server}" Style="{StaticResource MutedLabel}" />
+            <Entry Text="{Binding ServerUrl}" Keyboard="Url" FontSize="13" />
+
+            <Button Text="{loc:Tr Login_Button}" Style="{StaticResource Primary}" Command="{Binding LoginCommand}" AutomationId="SignIn" />
+            <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+            <Label Text="{Binding Message}" Style="{StaticResource ErrorLabel}" HorizontalTextAlignment="Center" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

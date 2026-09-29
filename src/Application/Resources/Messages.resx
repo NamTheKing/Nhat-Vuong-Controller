@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="Actor_AutoOff" xml:space="preserve"><value>Hệ thống (tự động tắt sau giờ học)</value></data>
+  <data name="Actor_Closing" xml:space="preserve"><value>Hệ thống (hết giờ hoạt động)</value></data>
+  <data name="Actor_PreCool" xml:space="preserve"><value>Hệ thống (bật trước giờ học theo hẹn của {0})</value></data>
+  <data name="Actor_DeviceSchedule" xml:space="preserve"><value>Thiết bị (lịch lưu sẵn khi mất kết nối máy chủ)</value></data>
+  <data name="Actor_LanUnknown" xml:space="preserve"><value>Người dùng qua mạng LAN</value></data>
+  <data name="Command_Timeout" xml:space="preserve"><value>Thiết bị không phản hồi trong {0} giây.</value></data>
+  <data name="Command_DeviceOffline" xml:space="preserve"><value>Thiết bị đang mất kết nối.</value></data>
+  <data name="Command_GatewayDown" xml:space="preserve"><value>Máy chủ chưa kết nối được tới broker MQTT.</value></data>
+  <data name="Command_NoAccess" xml:space="preserve"><value>Bạn không có quyền điều khiển phòng này vào thời điểm hiện tại.</value></data>
+  <data name="Command_Precedence" xml:space="preserve"><value>Giảng viên {0} vừa điều khiển thiết bị này; lệnh của giảng viên được ưu tiên.</value></data>
+  <data name="Command_Replayed" xml:space="preserve"><value>Ghi nhận lại sau khi thiết bị kết nối lại.</value></data>
+  <data name="Notify_Category_Incident" xml:space="preserve"><value>Sự cố</value></data>
+  <data name="Notify_Category_Alert" xml:space="preserve"><value>Cảnh báo</value></data>
+  <data name="Notify_Category_Control" xml:space="preserve"><value>Điều khiển</value></data>
+  <data name="Notify_DeviceError_Title" xml:space="preserve"><value>Thiết bị báo lỗi {0}</value></data>
+  <data name="Notify_DeviceError_Body" xml:space="preserve"><value>Thiết bị {0} (phòng {1}) báo mã lỗi {2}. {3}</value></data>
+  <data name="Notify_Disconnect_Title" xml:space="preserve"><value>Thiết bị mất kết nối quá lâu</value></data>
+  <data name="Notify_Disconnect_Body" xml:space="preserve"><value>Thiết bị {0} (phòng {1}) đã mất kết nối hơn {2} phút trong giờ hoạt động.</value></data>
+  <data name="Notify_LongRun_Title" xml:space="preserve"><value>Điều hòa chạy liên tục quá lâu</value></data>
+  <data name="Notify_LongRun_Body" xml:space="preserve"><value>Thiết bị {0} (phòng {1}) đã chạy liên tục hơn {2} giờ.</value></data>
+  <data name="Notify_PrecedenceRejected_Title" xml:space="preserve"><value>Lệnh bị từ chối do ưu tiên giảng viên</value></data>
+  <data name="Notify_PrecedenceRejected_Body" xml:space="preserve"><value>Lệnh của bạn trên thiết bị {0} bị từ chối vì giảng viên {1} vừa điều khiển thiết bị này.</value></data>
+  <data name="Notify_Overridden_Title" xml:space="preserve"><value>Lệnh của bạn đã bị giảng viên ghi đè</value></data>
+  <data name="Notify_Overridden_Body" xml:space="preserve"><value>Giảng viên {0} đã thay đổi thiết lập trên thiết bị {1}.</value></data>
+  <data name="Incident_Disconnect_Message" xml:space="preserve"><value>Mất kết nối hơn {0} phút trong giờ hoạt động.</value></data>
+  <data name="Incident_LongRun_Message" xml:space="preserve"><value>Chạy liên tục hơn {0} giờ.</value></data>
+  <data name="PreCool_Outcome_Done" xml:space="preserve"><value>Đã bật {0}/{1} thiết bị.</value></data>
+  <data name="PreCool_Outcome_OutsideHours" xml:space="preserve"><value>Bỏ qua: ngoài giờ hoạt động.</value></data>
+  <data name="PreCool_Outcome_Missed" xml:space="preserve"><value>Bỏ qua: quá thời gian bắt kịp sau khi máy chủ khởi động lại.</value></data>
+  <data name="PreCool_Outcome_Replaced" xml:space="preserve"><value>Hủy: thời khóa biểu đã được nhập lại.</value></data>
+  <data name="PreCool_Outcome_Device" xml:space="preserve"><value>Thiết bị đã tự thực hiện khi mất kết nối máy chủ.</value></data>
+  <data name="PreCool_Outcome_Cancelled" xml:space="preserve"><value>Người dùng đã hủy.</value></data>
+  <data name="Reject_OutsideHours" xml:space="preserve"><value>Ngoài giờ hoạt động của khuôn viên ({0}–{1}).</value></data>
+  <data name="Reject_BelowMin" xml:space="preserve"><value>Nhiệt độ đặt thấp hơn ngưỡng tối thiểu {0}°C.</value></data>
+  <data name="Reject_AboveMax" xml:space="preserve"><value>Nhiệt độ đặt cao hơn ngưỡng tối đa {0}°C.</value></data>
+  <data name="Reject_InvalidValue" xml:space="preserve"><value>Giá trị lệnh không hợp lệ.</value></data>
+</root>

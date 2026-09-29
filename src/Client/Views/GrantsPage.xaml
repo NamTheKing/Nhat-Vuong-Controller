@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:loc="clr-namespace:NhatVuong.Client.Localization"
+             xmlns:vm="clr-namespace:NhatVuong.Client.ViewModels"
+             xmlns:api="clr-namespace:NhatVuong.Contracts.Api;assembly=NhatVuong.Contracts"
+             x:Class="NhatVuong.Client.Views.GrantsPage"
+             x:DataType="vm:GrantsViewModel"
+             Title="{loc:Tr Grants_Title}">
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="8" MaximumWidthRequest="720">
+            <Border Style="{StaticResource Card}">
+                <VerticalStackLayout Spacing="6">
+                    <Picker Title="{loc:Tr Grants_User}" ItemsSource="{Binding Users}" SelectedItem="{Binding SelectedUser}" ItemDisplayBinding="{Binding FullName, x:DataType=api:UserDto}" />
+                    <Picker Title="{loc:Tr Common_Room}" ItemsSource="{Binding Rooms}" SelectedItem="{Binding SelectedRoom}" ItemDisplayBinding="{Binding Code, x:DataType=api:RoomDto}" />
+                    <Label Text="{loc:Tr Common_Date}" />
+                    <DatePicker Date="{Binding Date}" Format="dd/MM/yyyy" />
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="8">
+                        <VerticalStackLayout>
+                            <Label Text="{loc:Tr Grants_StartTime}" />
+                            <TimePicker Time="{Binding StartTime}" Format="HH:mm" />
+                        </VerticalStackLayout>
+                        <VerticalStackLayout Grid.Column="1">
+                            <Label Text="{loc:Tr Grants_EndTime}" />
+                            <TimePicker Time="{Binding EndTime}" Format="HH:mm" />
+                        </VerticalStackLayout>
+                    </Grid>
+                    <Entry Placeholder="{loc:Tr Common_Note}" Text="{Binding Note}" />
+                    <Button Text="{loc:Tr Grants_Create}" Style="{StaticResource Primary}" Command="{Binding CreateCommand}" />
+                </VerticalStackLayout>
+            </Border>
+            <CollectionView ItemsSource="{Binding Grants}" SelectionMode="Single" SelectedItem="{Binding Selected}" HeightRequest="320">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="api:GrantDto">
+                        <VerticalStackLayout Padding="4,6">
+                            <Label FontAttributes="Bold">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding SubjectName}" />
+                                        <Span Text=" · " />
+                                        <Span Text="{Binding RoomCode}" />
+                                        <Span Text=" · " />
+                                        <Span Text="{Binding Source, Converter={StaticResource EnumText}}" TextColor="{StaticResource Brand}" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label Style="{StaticResource MutedLabel}">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding ValidFrom, Converter={StaticResource LocalTime}}" />
+                                        <Span Text=" → " />
+                                        <Span Text="{Binding ValidTo, Converter={StaticResource LocalTime}}" />
+                                        <Span Text="  " />
+                                        <Span Text="{Binding Note}" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button Text="{loc:Tr Grants_Revoke}" Command="{Binding RevokeCommand}" HorizontalOptions="Start" />
+            <Label Text="{Binding Message}" Style="{StaticResource ErrorLabel}" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

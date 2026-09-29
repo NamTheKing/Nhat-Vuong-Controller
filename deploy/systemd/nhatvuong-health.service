@@ -1,0 +1,7 @@
+# Restarts the server when /health/ready fails three times in a row (hung, not crashed).
+[Unit]
+Description=Nhat Vuong Controller readiness watchdog
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c 'for i in 1 2 3; do curl -fsS --max-time 5 http://127.0.0.1:8080/health/ready >/dev/null && exit 0; sleep 5; done; systemctl restart nhatvuong'
