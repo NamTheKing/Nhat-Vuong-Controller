@@ -25,6 +25,7 @@ src/
   Server/                 composition root, health checks, grant-signing key
   Client/                 .NET MAUI app (Android + Windows), resources in Resources/Strings/*.resx
 simulator/                virtual device fleet: MQTT module twin, fault injection, LAN endpoint, cached schedule
+video/                    animated intro video (canvas + Gemini TTS narration), see video/README.md
 tests/
   Application.Tests/      unit tests of the core on SQLite with a controllable clock (+ architecture tests)
   Integration.Tests/      real server + real MQTT + simulated modules + LAN, via WebApplicationFactory

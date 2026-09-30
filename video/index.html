@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nhat Vuong Intro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; background: #0b1020; color: #e7ecf5; font-family: "Be Vietnam Pro", system-ui, sans-serif; }
+    main { max-width: 1200px; margin: 0 auto; padding: 16px; }
+    canvas { width: 100%; aspect-ratio: 16 / 9; display: block; border-radius: 12px; background: #000; }
+    .bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 12px; }
+    button { font: inherit; padding: 8px 16px; border: 0; border-radius: 8px; background: #2b6cff; color: #fff; cursor: pointer; }
+    button.secondary { background: #25304a; }
+    button:disabled { opacity: .5; cursor: default; }
+    #status { opacity: .8; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <main>
+    <canvas id="stage" width="1920" height="1080"></canvas>
+    <div class="bar">
+      <button id="play">▶ Phát</button>
+      <button id="record" class="secondary">● Quay thành video (.webm)</button>
+      <label><input type="checkbox" id="subs" checked> Phụ đề</label>
+      <span id="status"></span>
+    </div>
+  </main>
+  <script type="module" src="intro.js"></script>
+</body>
+</html>
