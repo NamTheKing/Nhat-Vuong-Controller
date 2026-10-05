@@ -1,0 +1,20 @@
+[0s - 8s]
+Mỗi buổi tối, phòng học đã vắng, nhưng điều hòa vẫn chạy. Không ai tắt, và cũng không ai biết.
+
+[8s - 13s]
+Phòng trống, điều hòa vẫn bật. Tiền điện lãng phí mỗi ngày.
+
+[13s - 18s]
+Với Nhat Vuong Controller, bật tắt điều hòa từ xa chỉ bằng một chạm.
+
+[18s - 24s]
+Khi điều hòa gặp sự cố, quản trị viên thấy ngay phòng nào, lỗi gì.
+
+[24s - 29s]
+Mọi thông báo được gom về một nơi, không bỏ sót.
+
+[29s - 35s]
+Quản trị viên đặt tên, sắp xếp từng điều hòa theo phòng, chỉ vài thao tác.
+
+[35s - 40s]
+Và chuyển đổi giữa tiếng Việt và tiếng Anh chỉ trong một chạm.
