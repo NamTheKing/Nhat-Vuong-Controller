@@ -41,3 +41,4 @@ Convert to MP4 if needed: `ffmpeg -i nhat-vuong-intro.webm -c:v libx264 -crf 18 
 `pitch/` holds a second storyboard for a pitch-deck video whose pictures are generated in Google Flow:
 `pitch/scenes.js` is the narration, `pitch/STORYBOARD.md` has the Flow prompt and overlay text for each
 8-second clip plus the assembly steps. `npm run voice:pitch` generates the narration into `pitch/audio/`.
+`npm run srt:pitch` then writes English subtitles timed to that narration (`pitch/subtitles.en.srt`).

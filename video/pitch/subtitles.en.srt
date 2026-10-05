@@ -1,0 +1,83 @@
+1
+00:00:00,000 --> 00:00:02,921
+Every evening, in classrooms
+with the lights off,
+
+2
+00:00:02,921 --> 00:00:07,690
+the air conditioners keep running. No one
+turns them off, and no one even knows.
+
+3
+00:00:08,000 --> 00:00:10,525
+The school pays for cooling empty rooms,
+
+4
+00:00:10,525 --> 00:00:14,250
+while lecturers have to borrow
+a remote before every class.
+
+5
+00:00:16,000 --> 00:00:18,202
+Introducing Nhat Vuong Controller:
+
+6
+00:00:18,202 --> 00:00:21,828
+control every air conditioner
+on campus from your phone,
+
+7
+00:00:21,828 --> 00:00:23,770
+following the class timetable.
+
+8
+00:00:24,000 --> 00:00:30,290
+Teach in a room, and you can switch on its
+air conditioner. No sign-up, no remote.
+
+9
+00:00:32,000 --> 00:00:35,198
+When the last class ends, the
+system switches off by itself.
+
+10
+00:00:35,198 --> 00:00:37,650
+Before class starts, the
+room is already cool.
+
+11
+00:00:40,000 --> 00:00:43,897
+When a unit fails, maintenance
+is alerted instantly,
+
+12
+00:00:43,897 --> 00:00:46,370
+with the error code and the room.
+
+13
+00:00:48,000 --> 00:00:52,206
+No internet? The app still
+works over the local network,
+
+14
+00:00:52,206 --> 00:00:54,610
+protected by digital signatures.
+
+15
+00:00:56,000 --> 00:01:03,690
+27 features done, 111 automated
+tests, running on Android and Windows.
+
+16
+00:01:04,000 --> 00:01:07,230
+Next step: a pilot in one campus building.
+
+17
+00:01:07,230 --> 00:01:11,690
+Join us in turning every
+classroom into a smart classroom.
+
+18
+00:01:12,000 --> 00:01:16,610
+Nhat Vuong Controller. Cool when
+you need it, off when you don't.
