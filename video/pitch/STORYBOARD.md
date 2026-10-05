@@ -10,7 +10,8 @@ Total ≈ 80 seconds.
 1. **Voice first.** `npm run voice:pitch` writes `pitch/audio/<id>.wav` and `manifest.json` with each clip's
    length. Every line must stay under ~7.5 s so it fits its 8 s clip; shorten the text in `scenes.js` and
    rerun `npm run voice:pitch -- <id>` for any line that runs long.
-2. **Pictures in Flow.** New project → for each scene paste the *style block* followed by the scene prompt.
+2. **Pictures in Flow.** New project → for each scene paste its ready-made block from `flow-prompts.txt`
+   (style block + scene prompt + title, already joined).
    Generate 2–4 variants, keep the best, add it to the Scene builder in order.
 3. **Assemble.** Flow cannot import outside audio or subtitle files, so one last step happens in CapCut (or
    Clipchamp): put the 10 clips back to back (each exactly 8 s), place each WAV at the start of its clip,

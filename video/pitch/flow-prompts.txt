@@ -1,0 +1,33 @@
+FLOW PROMPTS — Nhat Vuong Controller pitch video
+Settings for every clip: Text to Video, Veo (highest quality available), 16:9 landscape, 2-4 outputs.
+Paste one block per clip, keep the best result, add it to the Scene builder in order 01 -> 10.
+
+===== 01-hook (Hook) =====
+Cinematic, modern Vietnamese university campus, clean tech-startup look, soft natural light, cool blue and white palette with warm accents, shallow depth of field, smooth slow camera motion, 16:9, photorealistic. Evening, an empty university classroom with lights off, a wall-mounted air conditioner still running, its green LED glowing, curtains moving gently in the cold airflow, slow dolly-in towards the unit. Ambient hum, no speech.
+
+===== 02-problem (Problem) =====
+Cinematic, modern Vietnamese university campus, clean tech-startup look, soft natural light, cool blue and white palette with warm accents, shallow depth of field, smooth slow camera motion, 16:9, photorealistic. Corridor of a university building at night, camera tracks past several closed classroom doors, each with cold air and a faint AC glow visible through the door glass; then a lecturer in the morning waiting at a security desk for a remote control. Ambient sound, no speech. Clean bold white sans-serif title text "Empty rooms. AC still on." fades in at the top of the frame, spelled exactly; keep the bottom of the frame free of text.
+
+===== 03-solution (Solution) =====
+Cinematic, modern Vietnamese university campus, clean tech-startup look, soft natural light, cool blue and white palette with warm accents, shallow depth of field, smooth slow camera motion, 16:9, photorealistic. Close-up of a young Vietnamese lecturer's hand holding a smartphone showing a minimal blue app with one large round power button; the lecturer taps it and the classroom air conditioner behind turns on. Soft UI click, no speech. Clean bold white sans-serif title text "Nhat Vuong Controller" fades in at the top of the frame, spelled exactly; keep the bottom of the frame free of text.
+
+===== 04-rights (Timetable-based rights) =====
+Cinematic, modern Vietnamese university campus, clean tech-startup look, soft natural light, cool blue and white palette with warm accents, shallow depth of field, smooth slow camera motion, 16:9, photorealistic. Over-the-shoulder shot of the lecturer entering a classroom at the start of class, phone screen shows a timetable card highlighted for this room, the AC switches on as students sit down. No speech. Clean bold white sans-serif title text "Your timetable is your key" fades in at the top of the frame, spelled exactly; keep the bottom of the frame free of text.
+
+===== 05-autooff (Auto-off + pre-cool) =====
+Cinematic, modern Vietnamese university campus, clean tech-startup look, soft natural light, cool blue and white palette with warm accents, shallow depth of field, smooth slow camera motion, 16:9, photorealistic. Time-lapse of a classroom: students leave at the end of the day, the wall clock reaches five o'clock, the air conditioner's LED turns off by itself; cut to early morning, the AC starts alone and cool air fills the empty, sunlit room. No speech. Clean bold white sans-serif title text "Auto-off. Pre-cooled." fades in at the top of the frame, spelled exactly; keep the bottom of the frame free of text.
+
+===== 06-maintenance (Maintenance alerts) =====
+Cinematic, modern Vietnamese university campus, clean tech-startup look, soft natural light, cool blue and white palette with warm accents, shallow depth of field, smooth slow camera motion, 16:9, photorealistic. A maintenance technician in a uniform receives a notification on a tablet showing a building floor plan with one room highlighted in red, walks briskly down a corridor holding a toolbox. No speech. Clean bold white sans-serif title text "Instant fault alerts" fades in at the top of the frame, spelled exactly; keep the bottom of the frame free of text.
+
+===== 07-offline (Works offline) =====
+Cinematic, modern Vietnamese university campus, clean tech-startup look, soft natural light, cool blue and white palette with warm accents, shallow depth of field, smooth slow camera motion, 16:9, photorealistic. Inside a classroom, a Wi-Fi router's internet light turns red; the lecturer still taps the phone and the air conditioner responds immediately, a subtle glowing line connects the phone and the AC across the room. No speech. Clean bold white sans-serif title text "Works without internet" fades in at the top of the frame, spelled exactly; keep the bottom of the frame free of text.
+
+===== 08-traction (Progress) =====
+Cinematic, modern Vietnamese university campus, clean tech-startup look, soft natural light, cool blue and white palette with warm accents, shallow depth of field, smooth slow camera motion, 16:9, photorealistic. A student developer team at a desk with laptops showing code and a dashboard of passing green test results, a small device module with blinking LEDs on the table, team members smiling and giving a quiet high-five. No speech. Clean bold white sans-serif title text "27 features, 111 tests" fades in at the top of the frame, spelled exactly; keep the bottom of the frame free of text.
+
+===== 09-ask (Ask / next step) =====
+Cinematic, modern Vietnamese university campus, clean tech-startup look, soft natural light, cool blue and white palette with warm accents, shallow depth of field, smooth slow camera motion, 16:9, photorealistic. Aerial drone shot rising over a university building at golden hour, windows of classrooms lighting up one by one in a calm, efficient pattern. Uplifting ambient music, no speech. Clean bold white sans-serif title text "Next: one-building pilot" fades in at the top of the frame, spelled exactly; keep the bottom of the frame free of text.
+
+===== 10-close (Close) =====
+Cinematic, modern Vietnamese university campus, clean tech-startup look, soft natural light, cool blue and white palette with warm accents, shallow depth of field, smooth slow camera motion, 16:9, photorealistic. Slow pull-back from a single wall-mounted air conditioner in a bright modern classroom, the frame settles on clean empty wall space on the right where the title appears. Soft ending tone, no speech. Clean bold white sans-serif title text "Nhat Vuong Controller" fades in at the top of the frame, spelled exactly; keep the bottom of the frame free of text.
