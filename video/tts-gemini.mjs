@@ -4,15 +4,15 @@
 //   GEMINI_API_KEY=...  node tts-gemini.mjs            # only scenes without audio yet
 //   node tts-gemini.mjs --force                         # regenerate everything
 //   node tts-gemini.mjs outro                           # regenerate chosen scenes
+//   node tts-gemini.mjs --scenes pitch/scenes.js        # another storyboard -> pitch/audio/
 //
 // No npm packages needed: Node 20+ has fetch built in.
 
 import { mkdir, readFile, writeFile, access } from "node:fs/promises";
-import { scenes, voice } from "./scenes.js";
+import { pathToFileURL } from "node:url";
 
 const apiKey = process.env.GEMINI_API_KEY;
 const model = process.env.GEMINI_TTS_MODEL ?? "gemini-2.5-flash-preview-tts";
-const outDir = new URL("./audio/", import.meta.url);
 
 if (!apiKey) {
   console.error("Missing GEMINI_API_KEY. Create one at https://aistudio.google.com/apikey and put it in video/.env");
@@ -21,7 +21,14 @@ if (!apiKey) {
 
 const args = process.argv.slice(2);
 const force = args.includes("--force");
-const only = args.filter((a) => !a.startsWith("--"));
+const scenesIndex = args.indexOf("--scenes");
+const scenesFile = scenesIndex >= 0 ? args[scenesIndex + 1] : "scenes.js";
+const only = args.filter((a, i) => !a.startsWith("--") && i !== scenesIndex + 1);
+
+// Audio lands next to the storyboard it was made from: scenes.js -> audio/, pitch/scenes.js -> pitch/audio/
+const scenesUrl = pathToFileURL(new URL(scenesFile, import.meta.url).pathname);
+const { scenes, voice } = await import(scenesUrl.href);
+const outDir = new URL("./audio/", scenesUrl);
 
 await mkdir(outDir, { recursive: true });
 const manifestUrl = new URL("manifest.json", outDir);

@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "voice": "node --env-file-if-exists=.env tts-gemini.mjs",
+    "voice:pitch": "node --env-file-if-exists=.env tts-gemini.mjs --scenes pitch/scenes.js",
     "serve": "node serve.mjs"
   },
   "engines": { "node": ">=22" }

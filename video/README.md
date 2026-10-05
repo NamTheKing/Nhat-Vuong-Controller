@@ -35,3 +35,9 @@ Convert to MP4 if needed: `ffmpeg -i nhat-vuong-intro.webm -c:v libx264 -crf 18 
 - Another TTS model: set `GEMINI_TTS_MODEL` in `.env`.
 
 `.env`, `audio/` and recorded videos are git-ignored.
+
+## Pitch video (Google Flow + Gemini voice)
+
+`pitch/` holds a second storyboard for a pitch-deck video whose pictures are generated in Google Flow:
+`pitch/scenes.js` is the narration, `pitch/STORYBOARD.md` has the Flow prompt and overlay text for each
+8-second clip plus the assembly steps. `npm run voice:pitch` generates the narration into `pitch/audio/`.
