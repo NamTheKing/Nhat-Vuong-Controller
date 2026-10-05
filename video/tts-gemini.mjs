@@ -67,6 +67,15 @@ async function synthesize(text, attempt = 1) {
   });
 
   // Free-tier TTS allows only a few requests per minute: wait and retry on 429/5xx.
+  // A retry delay of minutes or hours means the daily quota is spent, so stop instead of waiting.
+  if (res.status === 429) {
+    const body = await res.clone().text();
+    const delay = Number(/"retryDelay":\s*"(\d+)s"/.exec(body)?.[1] ?? 0);
+    if (delay > 120) {
+      throw new Error(`Daily Gemini TTS quota used up; it resets in about ${Math.ceil(delay / 3600)} h. ` +
+        "Rerun the same command later: scenes that already have audio are skipped.");
+    }
+  }
   if ((res.status === 429 || res.status >= 500) && attempt <= 4) {
     const wait = 15 * attempt;
     console.log(`      HTTP ${res.status}, retrying in ${wait}s...`);

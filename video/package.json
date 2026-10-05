@@ -6,6 +6,9 @@
     "voice": "node --env-file-if-exists=.env tts-gemini.mjs",
     "voice:pitch": "node --env-file-if-exists=.env tts-gemini.mjs --scenes pitch/scenes.js",
     "srt:pitch": "node make-srt.mjs pitch/scenes.js",
+    "voice:40s": "node --env-file-if-exists=.env tts-gemini.mjs --scenes pitch-40s/scenes.js",
+    "srt:40s": "node make-srt.mjs pitch-40s/scenes.js",
+    "track:40s": "node make-voice-track.mjs pitch-40s/scenes.js",
     "serve": "node serve.mjs"
   },
   "engines": { "node": ">=22" }

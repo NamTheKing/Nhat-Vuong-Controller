@@ -1,0 +1,38 @@
+1
+00:00:00,000 --> 00:00:04,547
+Every evening, the classrooms are empty,
+but the air conditioners keep running.
+
+2
+00:00:04,547 --> 00:00:06,850
+No one turns them off, and no one knows.
+
+3
+00:00:08,000 --> 00:00:12,330
+Empty rooms, AC still on.
+Electricity wasted every day.
+
+4
+00:00:13,000 --> 00:00:17,500
+With Nhat Vuong Controller, switch
+any AC on or off remotely, in one tap.
+
+5
+00:00:18,000 --> 00:00:23,500
+When a unit breaks down, admins see
+right away which room and what fault.
+
+6
+00:00:24,000 --> 00:00:28,500
+Every notification in one
+place, nothing missed.
+
+7
+00:00:29,000 --> 00:00:34,500
+Name and organise every air conditioner
+by room, in just a few taps.
+
+8
+00:00:35,000 --> 00:00:39,500
+And switch between Vietnamese
+and English in one tap.

@@ -1,0 +1,29 @@
+Giọng: Kore. Mỗi đoạn dán nguyên văn (cả câu hướng dẫn phía trước) vào Google AI Studio > Generate speech.
+
+== 01-hook (giây 0–8, phải đọc xong trong 7.7s) ==
+Đọc bằng tiếng Việt, giọng miền Bắc, tự tin, truyền cảm hứng, nhịp hơi nhanh và dứt khoát, như video giới thiệu sản phẩm công nghệ:
+Mỗi buổi tối, phòng học đã vắng, nhưng điều hòa vẫn chạy. Không ai tắt, và cũng không ai biết.
+
+== 02-problem (giây 8–13, phải đọc xong trong 4.7s) ==
+Đọc bằng tiếng Việt, giọng miền Bắc, tự tin, truyền cảm hứng, nhịp hơi nhanh và dứt khoát, như video giới thiệu sản phẩm công nghệ:
+Phòng trống, điều hòa vẫn bật. Tiền điện lãng phí mỗi ngày.
+
+== 03-remote (giây 13–18, phải đọc xong trong 4.7s) ==
+Đọc bằng tiếng Việt, giọng miền Bắc, tự tin, truyền cảm hứng, nhịp hơi nhanh và dứt khoát, như video giới thiệu sản phẩm công nghệ:
+Với Nhat Vuong Controller, bật tắt điều hòa từ xa chỉ bằng một chạm.
+
+== 04-incidents (giây 18–24, phải đọc xong trong 5.7s) ==
+Đọc bằng tiếng Việt, giọng miền Bắc, tự tin, truyền cảm hứng, nhịp hơi nhanh và dứt khoát, như video giới thiệu sản phẩm công nghệ:
+Khi điều hòa gặp sự cố, quản trị viên thấy ngay phòng nào, lỗi gì.
+
+== 05-notifications (giây 24–29, phải đọc xong trong 4.7s) ==
+Đọc bằng tiếng Việt, giọng miền Bắc, tự tin, truyền cảm hứng, nhịp hơi nhanh và dứt khoát, như video giới thiệu sản phẩm công nghệ:
+Mọi thông báo được gom về một nơi, không bỏ sót.
+
+== 06-setup (giây 29–35, phải đọc xong trong 5.7s) ==
+Đọc bằng tiếng Việt, giọng miền Bắc, tự tin, truyền cảm hứng, nhịp hơi nhanh và dứt khoát, như video giới thiệu sản phẩm công nghệ:
+Quản trị viên đặt tên, sắp xếp từng điều hòa theo phòng, chỉ vài thao tác.
+
+== 07-language (giây 35–40, phải đọc xong trong 4.7s) ==
+Đọc bằng tiếng Việt, giọng miền Bắc, tự tin, truyền cảm hứng, nhịp hơi nhanh và dứt khoát, như video giới thiệu sản phẩm công nghệ:
+Và chuyển đổi giữa tiếng Việt và tiếng Anh chỉ trong một chạm.
