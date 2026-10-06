@@ -19,8 +19,8 @@ if (!scenesArg || !input || !output) {
 
 const ffmpeg = process.env.FFMPEG ?? "ffmpeg";
 const scenesUrl = pathToFileURL(new URL(scenesArg, pathToFileURL(`${process.cwd()}/`)).pathname);
-const { scenes } = await import(scenesUrl.href);
-const audioDir = new URL("audio/", scenesUrl);
+const { scenes, voice } = await import(scenesUrl.href);
+const audioDir = new URL(`${voice?.audioDir ?? "audio"}/`, scenesUrl);
 const manifest = JSON.parse(await readFile(new URL("manifest.json", audioDir), "utf8"));
 
 const inputs = ["-i", input];
@@ -44,7 +44,11 @@ scenes.forEach((scene, i) => {
   console.log(`${scene.id.padEnd(18)} ${String(scene.seconds).padStart(4)}s screen  ${entry.seconds.toFixed(1)}s voice  -> ${length.toFixed(1)}s`);
   total += length;
 });
-filters.push(`${pairs.join("")}concat=n=${scenes.length}:v=1:a=1[v][a]`);
+// Light mastering: cut rumble, even out the level, and normalise to -16 LUFS (YouTube/podcast loudness).
+filters.push(
+  `${pairs.join("")}concat=n=${scenes.length}:v=1:a=1[v][raw]`,
+  "[raw]highpass=f=70,acompressor=threshold=-20dB:ratio=2.5:attack=15:release=200,loudnorm=I=-16:TP=-1.5:LRA=9[a]",
+);
 
 const result = spawnSync(ffmpeg, [
   "-hide_banner", "-loglevel", "error", "-y", ...inputs,
