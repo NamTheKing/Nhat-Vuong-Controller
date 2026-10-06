@@ -62,9 +62,12 @@ Demo accounts (password `Demo@12345`, development seed only):
 |---|---|---|
 | `giangvien1@nhatvuong.edu.vn` | Lecturer | Has a class in A101 now: control both units, schedule a pre-cool |
 | `giangvien2@nhatvuong.edu.vn` | Lecturer | Class later today in A102 — A101 commands are rejected |
-| `loptruong@nhatvuong.edu.vn` | Class monitor | Temporary grant in A101; lecturer's commands take precedence |
-| `baotri@nhatvuong.edu.vn` | Maintenance | Incidents; in the simulator type `error SIM-A101-1 E5` |
-| `admin@nhatvuong.edu.vn` | Administrator | Campus data, QR registration, timetable import, grants, policy, audit, reports |
+| `loptruong@nhatvuong.edu.vn` | Class monitor | Temporary grant in A101; lecturer's commands take precedence (two seeded notifications show it) |
+| `baotri@nhatvuong.edu.vn` | Maintenance | 3 open and 2 resolved seeded incidents, 3 unread notifications; resolve one, or in the simulator type `error SIM-A101-1 E5` for a new one |
+| `admin@nhatvuong.edu.vn` | Administrator | Campus data, QR registration, timetable import, grants, policy, audit, reports; a seeded long-run alert |
+
+The incident history and notifications are seeded once, into a development database that has no incidents yet;
+delete `src/Server/nhatvuong-dev.db` to start over.
 
 Operating hours default to 06:00–22:00 campus time; outside them on-commands are rejected by design (US-13).
 Change them on the Admin → Operating policy screen.
